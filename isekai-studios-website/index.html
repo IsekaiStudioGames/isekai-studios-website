@@ -13,15 +13,16 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0a0e27 0%, #1a1d3d 50%, #2d1b4e 100%);
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1d3d 100%);
             color: #ffffff;
             overflow-x: hidden;
+            min-height: 100vh;
         }
 
         .cursor-star {
             position: fixed;
-            width: 8px;
-            height: 8px;
+            width: 6px;
+            height: 6px;
             background: linear-gradient(135deg, #8b5cf6, #ec4899);
             border-radius: 50%;
             pointer-events: none;
@@ -41,7 +42,7 @@
             }
         }
 
-        .stars {
+        .stars-bg {
             position: fixed;
             top: 0;
             left: 0;
@@ -59,185 +60,291 @@
         }
 
         @keyframes twinkle {
-            0%, 100% { opacity: 0.3; }
+            0%, 100% { opacity: 0.2; }
             50% { opacity: 1; }
         }
 
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 14, 39, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem 5%;
-            z-index: 1000;
-            border-bottom: 2px solid rgba(138, 43, 226, 0.3);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-            transition: all 0.3s;
+        .logo-center {
+            text-align: center;
+            padding: 2rem 0;
             position: relative;
-            cursor: pointer;
+            z-index: 100;
         }
 
-        nav a:hover {
-            color: #a78bfa;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #8b5cf6, #ec4899);
-            transition: width 0.3s;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+        .logo-center h1 {
+            font-size: 3rem;
             background: linear-gradient(135deg, #8b5cf6, #ec4899);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+            font-weight: 800;
+            letter-spacing: 2px;
         }
 
-        section {
+        .logo-center p {
+            color: #ffa500;
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+
+        .journey-container {
             position: relative;
-            min-height: 100vh;
-            padding: 8rem 5%;
-            z-index: 1;
+            width: 100%;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 2rem;
+            z-index: 10;
         }
 
-        .hero {
+        .journey-path {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1400px;
+            width: 100%;
+            gap: 2rem;
+        }
+
+        /* Connecting path line */
+        .journey-path::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 8%;
+            right: 8%;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                #3b82f6 0%, 
+                #ffa500 20%, 
+                #10b981 40%, 
+                #ec4899 60%, 
+                #8b5cf6 80%, 
+                #f59e0b 100%);
+            transform: translateY(-50%);
+            z-index: 0;
+            border-radius: 2px;
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+        }
+
+        .portal-station {
+            position: relative;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: center;
+            z-index: 1;
+            flex: 1;
         }
 
-        .hero h1 {
-            font-size: 4.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #8b5cf6, #ec4899, #f472b6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: fadeInUp 1s;
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: #c4b5fd;
-            animation: fadeInUp 1s 0.3s backwards;
-        }
-
-        .gallery-container {
-            width: 100%;
-            max-width: 900px;
-            margin: 3rem auto;
-        }
-
-        .gallery-image {
-            width: 100%;
-            height: 500px;
-            background: rgba(30, 30, 60, 0.4);
-            border: 3px solid rgba(139, 92, 246, 0.5);
-            border-radius: 20px;
+        .portal {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
-            color: #8b5cf6;
-            margin-bottom: 2rem;
-            transition: all 0.5s ease;
-            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
             cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            margin-bottom: 1rem;
+        }
+
+        .portal-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(20, 20, 40, 0.8);
+            backdrop-filter: blur(5px);
+            border: 4px solid;
+            position: relative;
             overflow: hidden;
         }
 
-        .gallery-image img {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-        }
-
-        .gallery-image:hover {
-            transform: scale(1.02);
-            border-color: rgba(236, 72, 153, 0.8);
-        }
-
-        .gallery-controls {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .gallery-dot {
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background: rgba(139, 92, 246, 0.3);
-            border: 2px solid rgba(139, 92, 246, 0.5);
-            transition: all 0.3s;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .gallery-dot.active {
-            background: rgba(236, 72, 153, 0.8);
-            border-color: #ec4899;
-            transform: scale(1.3);
-        }
-
-        .gallery-dot.active::after {
-            content: '●';
+        .portal-inner::before {
+            content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            animation: portalPulse 3s ease-in-out infinite;
+        }
+
+        .portal-inner::after {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+            border: 2px dashed;
+            border-color: inherit;
+            opacity: 0.3;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes portalPulse {
+            0%, 100% { transform: scale(0.9); opacity: 0.4; }
+            50% { transform: scale(1.2); opacity: 0.9; }
+        }
+
+        .portal:hover {
+            transform: scale(1.15);
+        }
+
+        .portal:hover .portal-inner {
+            box-shadow: 0 0 40px currentColor, inset 0 0 20px currentColor;
+        }
+
+        .portal-icon {
+            font-size: 3rem;
+            margin-bottom: 0.3rem;
+            z-index: 1;
+            filter: drop-shadow(0 0 10px currentColor);
+        }
+
+        .portal-label {
+            font-size: 1rem;
+            font-weight: 700;
             color: white;
-            font-size: 10px;
-        }
-
-        .project-info {
+            z-index: 1;
+            text-shadow: 0 0 10px rgba(0,0,0,0.8);
+            text-transform: uppercase;
+            letter-spacing: 1px;
             text-align: center;
-            animation: fadeIn 0.5s;
         }
 
-        .project-info h3 {
-            font-size: 2.5rem;
-            color: #a78bfa;
+        .station-number {
+            display: none;
+        }
+
+        /* Individual portal colors */
+        .portal-lore .portal-inner,
+        .portal-lore .station-number {
+            border-color: #3b82f6;
+            color: #3b82f6;
+        }
+
+        .portal-team .portal-inner,
+        .portal-team .station-number {
+            border-color: #ffa500;
+            color: #ffa500;
+        }
+
+        .portal-contact .portal-inner,
+        .portal-contact .station-number {
+            border-color: #10b981;
+            color: #10b981;
+        }
+
+        .portal-home .portal-inner,
+        .portal-home .station-number {
+            border-color: #ec4899;
+            color: #ec4899;
+        }
+
+        .portal-games .portal-inner,
+        .portal-games .station-number {
+            border-color: #8b5cf6;
+            color: #8b5cf6;
+        }
+
+        .portal-news .portal-inner,
+        .portal-news .station-number {
+            border-color: #f59e0b;
+            color: #f59e0b;
+        }
+
+        /* Walking character - custom running figure */
+        .traveler {
+            position: absolute;
+            bottom: calc(50% + 80px);
+            left: 5%;
+            font-size: 3rem;
+            z-index: 2;
+            animation: walk 20s linear infinite;
+            filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.8));
+        }
+
+        /* Custom running character made with CSS */
+        .traveler::before {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 50px;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            border-radius: 50% 50% 40% 40%;
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+        }
+
+        /* Head */
+        .traveler::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: linear-gradient(135deg, #ffa500, #ff8c00);
+            border-radius: 50%;
+            top: -20px;
+            left: 7.5px;
+            box-shadow: 0 0 15px rgba(255, 165, 0, 0.6);
+        }
+
+        @keyframes walk {
+            0% { left: 5%; }
+            100% { left: 95%; }
+        }
+
+        .info-panel {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            background: rgba(10, 14, 39, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 2px solid rgba(139, 92, 246, 0.5);
+            max-width: 350px;
+            z-index: 100;
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+        }
+
+        .info-panel h3 {
+            color: #ec4899;
             margin-bottom: 1rem;
+            font-size: 1.3rem;
         }
 
-        .project-info p {
-            font-size: 1.2rem;
+        .info-panel p {
             color: #c4b5fd;
-            line-height: 1.8;
-            max-width: 700px;
-            margin: 0 auto;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s;
         }
 
         @keyframes fadeIn {
@@ -245,206 +352,497 @@
             to { opacity: 1; }
         }
 
-        @keyframes fadeInUp {
-            from {
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1d3d 50%, #2d1b4e 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 3px solid rgba(139, 92, 246, 0.5);
+            max-width: 900px;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 0 50px rgba(139, 92, 246, 0.5);
+            animation: slideUp 0.4s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { 
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(50px);
             }
-            to {
+            to { 
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        .cta-button {
-            padding: 1rem 3rem;
-            font-size: 1.2rem;
-            background: linear-gradient(135deg, #8b5cf6, #ec4899);
-            border: none;
-            border-radius: 50px;
-            color: white;
-            transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
-            animation: fadeInUp 1s 0.6s backwards;
-            margin-top: 2rem;
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            color: #ec4899;
             cursor: pointer;
+            background: rgba(236, 72, 153, 0.2);
+            border: 2px solid #ec4899;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s;
+            font-weight: bold;
         }
 
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.6);
+        .modal-close:hover {
+            background: rgba(236, 72, 153, 0.4);
+            transform: rotate(90deg) scale(1.1);
         }
 
-        .content-section {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .content-section h2 {
-            font-size: 3rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            background: linear-gradient(135deg, #a78bfa, #f472b6);
+        .modal h2 {
+            font-size: 2.8rem;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .modal p {
+            color: #c4b5fd;
+            line-height: 1.9;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .game-card {
+            background: rgba(30, 30, 60, 0.7);
+            border: 3px solid rgba(255, 165, 0, 0.5);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 165, 0, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .game-card:hover::before {
+            left: 100%;
+        }
+
+        .game-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 165, 0, 0.9);
+            box-shadow: 0 15px 40px rgba(255, 165, 0, 0.4);
+        }
+
+        .game-card img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: contain;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .game-card h3 {
+            color: #ffa500;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .game-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            margin-right: 0.5rem;
+            font-weight: 600;
         }
 
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
         }
 
         .team-member {
-            background: rgba(30, 30, 60, 0.6);
-            border: 2px solid rgba(139, 92, 246, 0.3);
-            border-radius: 20px;
-            padding: 2rem;
+            background: rgba(30, 30, 60, 0.7);
+            border: 2px solid rgba(139, 92, 246, 0.4);
+            border-radius: 15px;
+            padding: 1.5rem;
             text-align: center;
             transition: all 0.3s;
-            backdrop-filter: blur(10px);
         }
 
         .team-member:hover {
-            transform: translateY(-10px);
-            border-color: rgba(236, 72, 153, 0.6);
-            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
+            border-color: rgba(255, 165, 0, 0.8);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
         }
 
-        .team-avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #8b5cf6, #ec4899);
-            margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            border: 3px solid rgba(139, 92, 246, 0.5);
-        }
-
-        .team-member h3 {
+        .team-member h4 {
             color: #a78bfa;
             margin-bottom: 0.5rem;
-            font-size: 1.5rem;
-        }
-
-        .team-role {
-            color: #ec4899;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            font-weight: 500;
+            font-size: 1.3rem;
         }
 
         .team-member p {
-            color: #c4b5fd;
-            line-height: 1.6;
-            font-size: 0.95rem;
+            color: #ec4899;
+            font-size: 1rem;
+            font-weight: 600;
         }
 
-        footer {
-            text-align: center;
-            padding: 3rem 5%;
-            background: rgba(10, 14, 39, 0.8);
-            border-top: 2px solid rgba(138, 43, 226, 0.3);
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .journey-path {
+                gap: 1rem;
+            }
+
+            .portal {
+                width: 120px;
+                height: 120px;
+            }
+
+            .portal-icon {
+                font-size: 2.5rem;
+            }
+
+            .portal-label {
+                font-size: 0.85rem;
+            }
         }
 
-        footer p {
-            color: #a78bfa;
+        @media (max-width: 768px) {
+            body {
+                overflow-y: auto;
+            }
+
+            .logo-center h1 {
+                font-size: 2rem;
+            }
+
+            .logo-center p {
+                font-size: 1rem;
+            }
+
+            .journey-container {
+                padding: 2rem 1rem;
+                min-height: auto;
+            }
+
+            .journey-path {
+                flex-direction: column;
+                gap: 3rem;
+                padding: 4rem 0;
+            }
+
+            .journey-path::before {
+                left: 50%;
+                top: 0;
+                bottom: 0;
+                width: 4px;
+                height: 100%;
+                right: auto;
+                transform: translateX(-50%);
+                background: linear-gradient(180deg, 
+                    #3b82f6 0%, 
+                    #ffa500 20%, 
+                    #10b981 40%, 
+                    #ec4899 60%, 
+                    #8b5cf6 80%, 
+                    #f59e0b 100%);
+            }
+
+            .traveler {
+                left: 50%;
+                bottom: auto;
+                top: 0;
+                margin-left: -20px;
+                animation: walkVertical 20s linear infinite;
+            }
+
+            @keyframes walkVertical {
+                0% { top: 0; }
+                100% { top: calc(100% - 80px); }
+            }
+
+            .portal {
+                width: 150px;
+                height: 150px;
+            }
+
+            .portal-icon {
+                font-size: 3rem;
+            }
+
+            .portal-label {
+                font-size: 1rem;
+            }
+
+            .info-panel {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                margin: 2rem auto;
+                max-width: calc(100% - 2rem);
+            }
+
+            .modal-content {
+                width: calc(100% - 2rem);
+                padding: 2rem 1.5rem;
+                margin: 1rem;
+            }
+
+            .modal h2 {
+                font-size: 2rem;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-center h1 {
+                font-size: 1.6rem;
+            }
+
+            .portal {
+                width: 130px;
+                height: 130px;
+            }
+
+            .portal-icon {
+                font-size: 2.5rem;
+            }
+
+            .traveler {
+                font-size: 2.5rem;
+            }
+
+            /* Rotate character to face downward on mobile */
+            .traveler::before,
+            .traveler::after {
+                transform: rotate(90deg);
+                transform-origin: center;
+            }
+
+            .traveler::before {
+                left: -5px;
+                top: 10px;
+            }
+
+            .traveler::after {
+                left: 2.5px;
+                top: -10px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="stars" id="stars"></div>
+    <div class="stars-bg" id="stars"></div>
 
-    <nav>
-        <ul>
-            <li class="logo">ISEKAI STUDIOS</li>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="logo-center">
+        <h1>⚔️ ISEKAI STUDIOS 🔮</h1>
+        <p>『 Follow the Hero's Journey 』</p>
+    </div>
 
-    <section id="home" class="hero">
-        <h1>Welcome to Another World</h1>
-        <p class="hero-subtitle">Where imagination transcends reality</p>
-        <button class="cta-button" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
-            Explore Our Worlds
-        </button>
-    </section>
-
-    <section id="projects" class="content-section">
-        <h2>Our Project</h2>
-        <div class="gallery-container">
-            <div class="gallery-image" id="galleryImage">🎮</div>
-            <div class="project-info" id="projectInfo"></div>
-        </div>
-    </section>
-
-    <section id="team" class="content-section">
-        <h2>Our Team</h2>
-        <div class="team-grid">
-            <div class="team-member">
-                <div class="team-avatar">🎮</div>
-                <h3>Jesse Scott Adams</h3>
-                <div class="team-role">Developer</div>
-                <p>Visionary developer bringing unique gaming experiences to life at Isekai Studios.</p>
+    <div class="journey-container">
+        <div class="traveler"></div>
+        
+        <div class="journey-path">
+            <!-- Station 1: Lore -->
+            <div class="portal-station">
+                <a href="#" class="portal portal-lore" onclick="openModal('lore'); return false;">
+                    <div class="portal-inner">
+                        <div class="portal-icon">📜</div>
+                        <div class="portal-label">Lore</div>
+                    </div>
+                </a>
+                <div class="station-number">1</div>
             </div>
-            <div class="team-member">
-                <div class="team-avatar">🐍</div>
-                <h3>Kcobra</h3>
-                <div class="team-role">Developer</div>
-                <p>Talented developer crafting immersive worlds and innovative gameplay mechanics.</p>
+
+            <!-- Station 2: Team -->
+            <div class="portal-station">
+                <a href="#" class="portal portal-team" onclick="openModal('team'); return false;">
+                    <div class="portal-inner">
+                        <div class="portal-icon">⚔️</div>
+                        <div class="portal-label">The Heroes</div>
+                    </div>
+                </a>
+                <div class="station-number">2</div>
             </div>
-            <div class="team-member">
-                <div class="team-avatar">🐺</div>
-                <h3>Rokanhellhound1</h3>
-                <div class="team-role">Developer</div>
-                <p>Creative developer pushing the boundaries of interactive storytelling and game design.</p>
+
+            <!-- Station 3: Contact -->
+            <div class="portal-station">
+                <a href="#" class="portal portal-contact" onclick="openModal('contact'); return false;">
+                    <div class="portal-inner">
+                        <div class="portal-icon">💌</div>
+                        <div class="portal-label">Messenger</div>
+                    </div>
+                </a>
+                <div class="station-number">3</div>
             </div>
-            <div class="team-member">
-                <div class="team-avatar">🐻</div>
-                <h3>ArcaneGummyBear</h3>
-                <div class="team-role">Developer</div>
-                <p>Innovative developer combining technical expertise with creative vision for unforgettable gaming experiences.</p>
+
+            <!-- Station 4: Guild Hall -->
+            <div class="portal-station">
+                <a href="#" class="portal portal-home" onclick="openModal('home'); return false;">
+                    <div class="portal-inner">
+                        <div class="portal-icon">🏰</div>
+                        <div class="portal-label">Guild Hall</div>
+                    </div>
+                </a>
+                <div class="station-number">4</div>
+            </div>
+
+            <!-- Station 5: Quest Board -->
+            <div class="portal-station">
+                <a href="#" class="portal portal-games" onclick="openModal('games'); return false;">
+                    <div class="portal-inner">
+                        <div class="portal-icon">🎮</div>
+                        <div class="portal-label">Quest Board</div>
+                    </div>
+                </a>
+                <div class="station-number">5</div>
+            </div>
+
+            <!-- Station 6: Chronicles -->
+            <div class="portal-station">
+                <a href="#" class="portal portal-news" onclick="openModal('news'); return false;">
+                    <div class="portal-inner">
+                        <div class="portal-icon">📰</div>
+                        <div class="portal-label">Chronicles</div>
+                    </div>
+                </a>
+                <div class="station-number">6</div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="about" class="content-section">
-        <h2>Our Story</h2>
-        <div style="max-width: 800px; margin: 0 auto; text-align: center; line-height: 1.8; color: #c4b5fd;">
-            <p style="margin-bottom: 1.5rem;">
-                At Isekai Studios, we believe in the power of games to transport players to extraordinary worlds. Founded by dreamers and creators, we specialize in crafting immersive experiences that blur the line between reality and fantasy.
-            </p>
-            <p>
-                Our mission is to create portals to new dimensions through innovative gameplay, stunning visuals, and compelling narratives. Every game we develop is a gateway to adventure, wonder, and the infinite possibilities of another world.
-            </p>
+    <div class="info-panel">
+        <h3>🎮 Hero's Journey</h3>
+        <p>🚶 Follow the traveler along the path</p>
+        <p>📍 Each station reveals a new chapter</p>
+        <p>✨ Click any portal to explore</p>
+    </div>
+
+    <!-- Modals -->
+    <div id="modal-lore" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('lore')">×</button>
+            <h2>📜 The Legend of Isekai Studios</h2>
+            <p><strong>In the beginning...</strong> there were four developers who dreamed of something bigger. Inspired by isekai stories—where ordinary people are transported to fantastical worlds—they asked: "What if we could create those portals?"</p>
+            <p><strong>The Vision:</strong> Games should feel like stepping into another world. Not just playing a character, but truly <em>being</em> transported somewhere new. Where magic is real, choices have weight, and every adventure feels personal.</p>
+            <p><strong>The Philosophy:</strong> We believe in handcrafted experiences over formulaic templates. In meaningful stories over mindless grinding. In games that respect your time while offering endless depth.</p>
+            <p><strong>The Journey:</strong> Like any good isekai protagonist, we're leveling up with each project, learning new skills, and growing stronger. Our first game is just the beginning of an epic saga.</p>
+            <p style="color: #ffa500; text-align: center; margin-top: 2rem;">🌟 <em>"Every master was once a beginner. Every legend started with a single quest."</em></p>
         </div>
-    </section>
+    </div>
 
-    <section id="contact" class="content-section">
-        <h2>Join Our Journey</h2>
-        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-            <p style="color: #c4b5fd; margin-bottom: 2rem; font-size: 1.2rem;">
-                Ready to step through the portal? Get in touch with us to learn more about our upcoming projects or join our team of world-builders.
-            </p>
-            <button class="cta-button">Contact Us</button>
+    <div id="modal-team" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('team')">×</button>
+            <h2>⚔️ The Party</h2>
+            <p>Meet the heroes bringing these worlds to life:</p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <h4>🎮 Jesse Scott Adams</h4>
+                    <p>Developer • World Builder</p>
+                </div>
+                <div class="team-member">
+                    <h4>🐍 Kcobra</h4>
+                    <p>Developer • Code Mage</p>
+                </div>
+                <div class="team-member">
+                    <h4>🐺 Rokanhellhound1</h4>
+                    <p>Developer • Quest Designer</p>
+                </div>
+                <div class="team-member">
+                    <h4>🐻 ArcaneGummyBear</h4>
+                    <p>Developer • System Architect</p>
+                </div>
+            </div>
+            <p style="margin-top: 2rem; text-align: center;">Together, we form an adventuring party dedicated to creating unforgettable gaming experiences!</p>
         </div>
-    </section>
+    </div>
 
-    <footer>
-        <p>&copy; 2025 Isekai Studios. All rights reserved. | Crafting portals to new worlds.</p>
-    </footer>
+    <div id="modal-contact" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('contact')">×</button>
+            <h2>💌 Send a Message</h2>
+            <p>Want to join our guild? Have a quest for us? Need a portal to somewhere specific?</p>
+            <p><strong>📧 Email:</strong> contact@isekaistudios.com</p>
+            <p><strong>🎮 Discord:</strong> Join our community (Coming Soon!)</p>
+            <p><strong>🐦 Social:</strong> Follow our development journey</p>
+            <p style="margin-top: 2rem;">Whether you're a fellow developer, a potential collaborator, or just a fan who wants to say hi—we'd love to hear from you! Every great adventure starts with a conversation.</p>
+        </div>
+    </div>
+
+    <div id="modal-home" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('home')">×</button>
+            <h2>🏰 Welcome, Traveler!</h2>
+            <p>You've been summoned to <strong>Isekai Studios</strong> - a realm where ordinary gamers become heroes of extraordinary worlds.</p>
+            <p>Just like the protagonist in your favorite isekai anime, you've stepped through a portal into something magical. Here, we don't just make games—we create entire dimensions for you to explore, conquer, and call home.</p>
+            <p><strong>Our Mission:</strong> To transport players beyond the mundane. Every game we craft is a gateway to adventure, where your choices matter, your actions echo across worlds, and every playthrough tells a different story.</p>
+            <p>⚔️ Are you ready to begin your adventure?</p>
+        </div>
+    </div>
+
+    <div id="modal-games" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('games')">×</button>
+            <h2>🎮 Active Quests</h2>
+            <div class="game-card" onclick="window.location.href='may-all-your-bacon-burn.html'">
+                <img src="Images/MAYBB.png" alt="May All Your Bacon Burn">
+                <h3>🔥 May All Your Bacon Burn</h3>
+                <p>Our debut adventure! A magical culinary journey where cooking meets sorcery, and every flame tells a story. Navigate enchanted kitchens, befriend fire spirits, and lift an ancient curse.</p>
+                <span class="game-badge">⚡ IN DEVELOPMENT</span>
+                <span class="game-badge">🎨 HAND-CRAFTED</span>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; color: #ffa500;">🌟 More worlds in development... Stay tuned!</p>
+        </div>
+    </div>
+
+    <div id="modal-news" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('news')">×</button>
+            <h2>📰 Development Chronicles</h2>
+            <p><strong>Latest Update:</strong> Hero's Path Established! 🎉</p>
+            <p>Welcome to the newly launched Isekai Studios journey system! Follow the traveler along the hero's path as we develop our first game, <em>May All Your Bacon Burn</em>.</p>
+            <p><strong>What's Next:</strong></p>
+            <p>🔥 Gameplay mechanics finalization</p>
+            <p>🎨 Art style refinement</p>
+            <p>🎵 Original soundtrack composition</p>
+            <p>📖 Story expansion and side quests</p>
+            <p style="margin-top: 2rem; color: #ffa500;">📢 Development blog and regular updates coming soon! Follow our journey from concept to completion.</p>
+        </div>
+    </div>
 
     <script>
-        // Star trail cursor effect
+        // Star trail cursor
         let lastStarTime = 0;
         const starInterval = 30;
 
@@ -466,9 +864,9 @@
             }
         });
 
-        // Generate starfield
+        // Generate background stars
         const starsContainer = document.getElementById('stars');
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 300; i++) {
             const star = document.createElement('div');
             star.className = 'star';
             star.style.width = Math.random() * 3 + 'px';
@@ -479,51 +877,31 @@
             starsContainer.appendChild(star);
         }
 
-        // Project gallery
-        const projects = [
-            {
-                image: 'Images/MAYBB.png',
-                title: 'May All Your Bacon Burn',
-                description: 'The debut title from Isekai Studios. A unique adventure that blends magic, mystery, and culinary chaos in ways you\'ve never experienced before.',
-                link: 'may_all_your_bacon_burn.html'
-            }
-        ];
-
-        let currentProject = 0;
-        const galleryImage = document.getElementById('galleryImage');
-        const projectInfo = document.getElementById('projectInfo');
-
-        function showProject(index) {
-            currentProject = index;
-            const project = projects[index];
-            
-            galleryImage.style.opacity = '0';
-            projectInfo.style.opacity = '0';
-            
-            setTimeout(() => {
-                galleryImage.innerHTML = `<img src="${project.image}" alt="${project.title}">`;
-                galleryImage.onclick = () => window.location.href = project.link;
-                projectInfo.innerHTML = `
-                    <h3>${project.title}</h3>
-                    <p>${project.description}</p>
-                `;
-                galleryImage.style.opacity = '1';
-                projectInfo.style.opacity = '1';
-            }, 250);
+        // Modal functions
+        function openModal(id) {
+            document.getElementById('modal-' + id).classList.add('active');
         }
 
-        // Initialize first project
-        showProject(0);
+        function closeModal(id) {
+            document.getElementById('modal-' + id).classList.remove('active');
+        }
 
-        // Smooth scroll for navigation
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
+        // Close modal on background click
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
                 }
             });
+        });
+
+        // ESC key closes modals
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal').forEach(modal => {
+                    modal.classList.remove('active');
+                });
+            }
         });
     </script>
 </body>
