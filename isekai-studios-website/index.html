@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Isekai Studios - Journey to Another World</title>
-    <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
-    <!-- rest of your head content -->
-</head><style>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -383,7 +381,7 @@
         }
 
         .modal-close {
-            position: absolute;
+            position: fixed;
             top: 1rem;
             right: 1rem;
             font-size: 2rem;
@@ -399,6 +397,7 @@
             border-radius: 50%;
             transition: all 0.3s;
             font-weight: bold;
+            z-index: 1001;
         }
 
         .modal-close:hover {
@@ -768,38 +767,22 @@
             <button class="modal-close" onclick="closeModal('team')">×</button>
             <h2>⚔️ The Party</h2>
             <p>Meet the heroes bringing these worlds to life:</p>
-           <div class="team-grid">
+            <div class="team-grid">
                 <div class="team-member">
-                    <h4>🎮 Peacebaby313 (Jesse)</h4>
+                    <h4>🎮 Jesse Scott Adams</h4>
                     <p>Developer • World Builder</p>
                 </div>
                 <div class="team-member">
-                    <h4>⚡ Chaos</h4>
-                    <p>Developer • Lead Developer</p>
+                    <h4>🐍 Kcobra</h4>
+                    <p>Developer • Code Mage</p>
                 </div>
                 <div class="team-member">
-                    <h4>🤖 RicoBOT</h4>
-                    <p>The Best Robot</p>
+                    <h4>🐺 Rokanhellhound1</h4>
+                    <p>Developer • Quest Designer</p>
                 </div>
                 <div class="team-member">
                     <h4>🐻 ArcaneGummyBear</h4>
                     <p>Developer • System Architect</p>
-                </div>
-                <div class="team-member">
-                    <h4>🌙 Eclipse</h4>
-                    <p>Team Member</p>
-                </div>
-                <div class="team-member">
-                    <h4>💼 Erica Henderson</h4>
-                    <p>Team Member</p>
-                </div>
-                <div class="team-member">
-                    <h4>👥 Geojuan45</h4>
-                    <p>Team Member</p>
-                </div>
-                <div class="team-member">
-                    <h4>🎯 Koolra</h4>
-                    <p>Team Member</p>
                 </div>
             </div>
             <p style="margin-top: 2rem; text-align: center;">Together, we form an adventuring party dedicated to creating unforgettable gaming experiences!</p>
@@ -833,7 +816,7 @@
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('games')">×</button>
             <h2>🎮 Active Quests</h2>
-            <div class="game-card" onclick="window.location.href='may_all_your_bacon_burn.html'">
+            <div class="game-card" onclick="window.location.href='may-all-your-bacon-burn.html'">
                 <img src="Images/MAYBB.png" alt="May All Your Bacon Burn">
                 <h3>🔥 May All Your Bacon Burn</h3>
                 <p>Our debut adventure! A magical culinary journey where cooking meets sorcery, and every flame tells a story. Navigate enchanted kitchens, befriend fire spirits, and lift an ancient curse.</p>
