@@ -7,6 +7,7 @@ fetch('modals.html')
 
 //  start cursor
 let lastStarTime = 0;
+
 // ...etc   
 const starInterval = 30;
 

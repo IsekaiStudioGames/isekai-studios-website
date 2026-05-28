@@ -272,7 +272,9 @@ body {
     color: #f59e0b;
 }
 
-/* Walking character - custom running figure */
+/*
+
+/* Walking character - custom running figure 
 .traveler {
     position: absolute;
     bottom: calc(50% + 80px);
@@ -282,8 +284,9 @@ body {
     animation: walk 20s linear infinite;
     filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.8));
 }
+*/
 
-/* Custom running character made with CSS */
+/* Custom running character made with CSS 
 .traveler::before {
     content: '';
     position: absolute;
@@ -293,6 +296,7 @@ body {
     border-radius: 50% 50% 40% 40%;
     box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
 }
+*/
 
 /* Head */
 .traveler::after {
