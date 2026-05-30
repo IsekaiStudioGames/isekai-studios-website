@@ -36,7 +36,8 @@ body {
     }
 }
 
-.stars-bg {
+.stars-bg 
+{
     position: fixed;
     top: 0;
     left: 0;
@@ -46,26 +47,30 @@ body {
     z-index: 0;
 }
 
-.star {
+.star 
+{
     position: absolute;
     background: white;
     border-radius: 50%;
     animation: twinkle 3s infinite;
 }
 
-@keyframes twinkle {
+@keyframes twinkle 
+{
     0%, 100% { opacity: 0.2; }
     50% { opacity: 1; }
 }
 
-.logo-center {
+.logo-center 
+{
     text-align: center;
     padding: 2rem 0;
     position: relative;
     z-index: 100;
 }
 
-.logo-center h1 {
+.logo-center h1 
+{
     font-size: 3rem;
     background: linear-gradient(135deg, #8b5cf6, #ec4899);
     -webkit-background-clip: text;
@@ -77,13 +82,15 @@ body {
     letter-spacing: 2px;
 }
 
-.logo-center p {
+.logo-center p 
+{
     color: #ffa500;
     font-size: 1.2rem;
     font-style: italic;
 }
 
-.journey-container {
+.journey-container 
+{
     position: relative;
     width: 100%;
     min-height: 60vh;
@@ -94,7 +101,8 @@ body {
     z-index: 10;
 }
 
-.journey-path {
+.journey-path 
+{
     position: relative;
     display: flex;
     align-items: center;
@@ -105,7 +113,8 @@ body {
 }
 
 /* Connecting path line */
-.journey-path::before {
+.journey-path::before 
+{
     content: '';
     position: absolute;
     top: 50%;
@@ -125,7 +134,8 @@ body {
     box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
 }
 
-.portal-station {
+.portal-station 
+{
     position: relative;
     display: flex;
     flex-direction: column;
@@ -134,10 +144,11 @@ body {
     flex: 1;
 }
 
-.portal {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
+.portal 
+{
+    width: 200px;
+    height: 300px;
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,10 +158,11 @@ body {
     margin-bottom: 1rem;
 }
 
-.portal-inner {
+.portal-inner 
+{
     width: 100%;
     height: 100%;
-    border-radius: 50%;
+    border-radius: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -162,7 +174,8 @@ body {
     overflow: hidden;
 }
 
-.portal-inner::before {
+.portal-inner::before 
+{
     content: '';
     position: absolute;
     width: 100%;
@@ -171,7 +184,8 @@ body {
     animation: portalPulse 3s ease-in-out infinite;
 }
 
-.portal-inner::after {
+.portal-inner::after 
+{
     content: '';
     position: absolute;
     width: 80%;
@@ -183,32 +197,38 @@ body {
     animation: rotate 20s linear infinite;
 }
 
-@keyframes rotate {
+@keyframes rotate 
+{
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
 
-@keyframes portalPulse {
+@keyframes portalPulse 
+{
     0%, 100% { transform: scale(0.9); opacity: 0.4; }
     50% { transform: scale(1.2); opacity: 0.9; }
 }
 
-.portal:hover {
+.portal:hover 
+{
     transform: scale(1.15);
 }
 
-.portal:hover .portal-inner {
+.portal:hover .portal-inner 
+{
     box-shadow: 0 0 40px currentColor, inset 0 0 20px currentColor;
 }
 
-.portal-icon {
+.portal-icon 
+{
     font-size: 3rem;
     margin-bottom: 0.3rem;
     z-index: 1;
     filter: drop-shadow(0 0 10px currentColor);
 }
 
-.portal-icon img {
+.portal-icon img 
+{
     width: 100%;
     height: 100%;
     max-width: 60px;
@@ -216,11 +236,13 @@ body {
     object-fit: contain;
 }
 
-.portal-lore .portal-icon img {
+.portal-lore .portal-icon img 
+{
     filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.8)) drop-shadow(0 0 5px rgba(59, 130, 246, 1));
 }
 
-.portal-label {
+.portal-label 
+{
     font-size: 1rem;
     font-weight: 700;
     color: white;
@@ -231,43 +253,50 @@ body {
     text-align: center;
 }
 
-.station-number {
+.station-number 
+{
     display: none;
 }
 
 /* Individual portal colors */
 .portal-lore .portal-inner,
-.portal-lore .station-number {
+.portal-lore .station-number 
+{
     border-color: #3b82f6;
     color: #3b82f6;
 }
 
 .portal-team .portal-inner,
-.portal-team .station-number {
+.portal-team .station-number 
+{
     border-color: #ffa500;
     color: #ffa500;
 }
 
 .portal-contact .portal-inner,
-.portal-contact .station-number {
+.portal-contact .station-number 
+{
     border-color: #10b981;
     color: #10b981;
 }
 
 .portal-home .portal-inner,
-.portal-home .station-number {
+.portal-home .station-number 
+{
     border-color: #ec4899;
     color: #ec4899;
 }
 
 .portal-games .portal-inner,
-.portal-games .station-number {
+.portal-games .station-number 
+{
     border-color: #8b5cf6;
     color: #8b5cf6;
 }
 
 .portal-news .portal-inner,
-.portal-news .station-number {
+.portal-news .station-number 
+{
     border-color: #f59e0b;
     color: #f59e0b;
 }
@@ -532,8 +561,8 @@ body {
     }
 
     .portal {
-        width: 120px;
-        height: 120px;
+        width: absolute;
+        height: absolute;
     }
 
     .portal-icon {
@@ -605,8 +634,8 @@ body {
     }
 
     .portal {
-        width: 150px;
-        height: 150px;
+        width: absolute;
+        height: absolute;
     }
 
     .portal-icon {
@@ -651,8 +680,8 @@ body {
     }
 
     .portal {
-        width: 130px;
-        height: 130px;
+        width: absolute;
+        height: absolute;
     }
 
     .portal-icon {
