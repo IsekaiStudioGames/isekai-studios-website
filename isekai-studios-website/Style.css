@@ -188,13 +188,15 @@ body {
 {
     content: '';
     position: absolute;
-    width: 80%;
-    height: 80%;
+    top: 5%;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     border: 2px dashed;
     border-color: inherit;
     opacity: 0.3;
     animation: rotate 20s linear infinite;
+
 }
 
 @keyframes rotate 
@@ -222,7 +224,7 @@ body {
 .portal-icon 
 {
     font-size: 3rem;
-    margin-bottom: 0.3rem;
+    margin-bottom: 50px;
     z-index: 1;
     filter: drop-shadow(0 0 10px currentColor);
 }
@@ -243,14 +245,14 @@ body {
 
 .portal-label 
 {
-    font-size: 1rem;
+    font-size: 24px;
     font-weight: 700;
-    color: white;
+    color: rgb(221, 0, 255);
     z-index: 1;
     text-shadow: 0 0 10px rgba(0,0,0,0.8);
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-align: center;
+    
 }
 
 .station-number 
@@ -575,7 +577,7 @@ body {
     }
 
     .portal-label {
-        font-size: 0.85rem;
+        font-size: 24px;
     }
 }
 
@@ -648,7 +650,7 @@ body {
     }
 
     .portal-label {
-        font-size: 1rem;
+        font-size: 24px;
     }
 
     .info-panel {
