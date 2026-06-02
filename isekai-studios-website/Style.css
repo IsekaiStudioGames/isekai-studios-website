@@ -5,7 +5,8 @@
     box-sizing: border-box;
 }
 
-body {
+body
+{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #0a0e27 0%, #1a1d3d 100%);
     color: #ffffff;
@@ -13,7 +14,8 @@ body {
     min-height: 100vh;
 }
 
-.cursor-star {
+.cursor-star
+{
     position: fixed;
     width: 6px;
     height: 6px;
@@ -25,12 +27,15 @@ body {
     animation: fadeOut 0.8s ease-out forwards;
 }
 
-@keyframes fadeOut {
-    0% {
+@keyframes fadeOut
+{
+    0% 
+    {
         opacity: 1;
         transform: scale(1);
     }
-    100% {
+    100% 
+    {
         opacity: 0;
         transform: scale(0.3);
     }
@@ -601,55 +606,66 @@ body {
 /* Responsive Design */
 @media (max-width: 1200px) 
 {
-    .journey-path {
+    .journey-path 
+    {
         gap: 1rem;
     }
 
-    .portal {
+    .portal 
+    {
         width: absolute;
         height: absolute;
     }
 
-    .portal-icon {
+    .portal-icon 
+    {
         font-size: 2.5rem;
     }
 
-    .portal-icon img {
+    .portal-icon img 
+    {
         max-width: 50px;
         max-height: 50px;
     }
 
-    .portal-label {
+    .portal-label 
+    {
         font-size: 24px;
     }
 }
 
 @media (max-width: 768px) 
 {
-    body {
+    body 
+    {
         overflow-y: auto;
     }
 
-    .logo-center h1 {
+    .logo-center h1 
+    {
         font-size: 2rem;
     }
 
-    .logo-center p {
+    .logo-center p 
+    {
         font-size: 1rem;
     }
 
-    .journey-container {
+    .journey-container 
+    {
         padding: 2rem 1rem;
         min-height: auto;
     }
 
-    .journey-path {
+    .journey-path 
+    {
         flex-direction: column;
         gap: 3rem;
         padding: 4rem 0;
     }
 
-    .journey-path::before {
+    .journey-path::before 
+    {
         left: 50%;
         top: 0;
         bottom: 0;
@@ -666,7 +682,8 @@ body {
             #f59e0b 100%);
     }
 
-    .traveler {
+    .traveler 
+    {
         left: 50%;
         bottom: auto;
         top: 0;
@@ -674,30 +691,36 @@ body {
         animation: walkVertical 20s linear infinite;
     }
 
-    @keyframes walkVertical {
+    @keyframes walkVertical 
+    {
         0% { top: 0; }
         100% { top: calc(100% - 80px); }
     }
 
-    .portal {
+    .portal 
+    {
         width: absolute;
         height: absolute;
     }
 
-    .portal-icon {
+    .portal-icon 
+    {
         font-size: 3rem;
     }
 
-    .portal-icon img {
+    .portal-icon img 
+    {
         max-width: 60px;
         max-height: 60px;
     }
 
-    .portal-label {
+    .portal-label 
+    {
         font-size: 24px;
     }
 
-    .info-panel {
+    .info-panel 
+    {
         position: relative;
         bottom: auto;
         left: auto;
@@ -705,58 +728,69 @@ body {
         max-width: calc(100% - 2rem);
     }
 
-    .modal-content {
+    .modal-content 
+    {
         width: calc(100% - 2rem);
         padding: 2rem 1.5rem;
         margin: 1rem;
     }
 
-    .modal h2 {
+    .modal h2 
+    {
         font-size: 2rem;
     }
 
-    .team-grid {
+    .team-grid 
+    {
         grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 480px) 
 {
-    .logo-center h1 {
+    .logo-center h1 
+    {
         font-size: 1.6rem;
     }
 
-    .portal {
+    .portal 
+    {
         width: absolute;
         height: absolute;
     }
 
-    .portal-icon {
+    .portal-icon 
+    {
         font-size: 2.5rem;
     }
 
-    .portal-icon img {
+    .portal-icon img 
+    {
         max-width: 50px;
         max-height: 50px;
     }
 
-    .traveler {
+    .traveler 
+    {
         font-size: 2.5rem;
     }
 
     /* Rotate character to face downward on mobile */
     .traveler::before,
-    .traveler::after {
+    .traveler::after 
+    {
         transform: rotate(90deg);
         transform-origin: center;
     }
 
-    .traveler::before {
+    .traveler::before 
+    {
         left: -5px;
         top: 10px;
     }
 
-    .traveler::after {
+    .traveler::after 
+    {
         left: 2.5px;
         top: -10px;
     }
