@@ -114,7 +114,7 @@ body
     justify-content: center;
     max-width: 1400px;
     width: 100%;
-    margin: 0%;
+    margin: 0 auto;
     gap: 2rem;
 }
 
@@ -147,13 +147,16 @@ body
     flex-direction: column;
     align-items: center;
     z-index: 1;
-    flex: 1;
+    flex: 0 0 auto ;
 }
 
 .portal 
 {
-    width: 200px;
-    height: 300px;
+    /* width: 200px; */
+    width: clamp(80px, 12vw, 200px);
+    /* height: 300px; */
+    height: clamp(120px,18vw, 300px);
+    flex-shrink: 1;
     border-radius: 0;
     display: flex;
     align-items: center;
@@ -195,8 +198,10 @@ body
     content: '';
     position: absolute;
     top: 5%;
-    width: 180px;
-    height: 180px;
+    /* width: 180px; */
+    width:clamp(115px,8vw,100px);
+    /* height: 180px; */
+    height:clamp(115px,8vw,100px);
     border-radius: 50%;
     border: 2px dashed;
     border-color: inherit;
@@ -230,13 +235,15 @@ body
 .portal-icon 
 {
     position: absolute;
-    top: 35%;
+    top: calc(5% + clamp(20px, 4vw, 90px)); 
     left: 50%;
-    transform: translate(-50% ,-50%);
-    font-size: 3rem;
-    margin-bottom: 50px;
+    transform: translate(-50%, -50%);
+    font-size: clamp(1rem, 2.5vw, 3rem);
     z-index: 1;
     filter: drop-shadow(0 0 10px currentColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .portal-icon img 
@@ -257,7 +264,7 @@ body
 {
     position: absolute;
     bottom: 10px;
-    font-size: 30px;
+    font-size: clamp(8px,1.2vw,30px);
     font-weight: 700;
     color: rgb(221, 0, 255);
     z-index: 1;
@@ -609,16 +616,20 @@ body
     .journey-path 
     {
         gap: 1rem;
+        align-items: center;
     }
 
     .portal 
     {
-        width: absolute;
-        height: absolute;
+        width: 140px;
+        height: 220px;
     }
 
     .portal-icon 
     {
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         font-size: 2.5rem;
     }
 
@@ -630,7 +641,7 @@ body
 
     .portal-label 
     {
-        font-size: 24px;
+        font-size: 16px;
     }
 }
 
@@ -660,6 +671,7 @@ body
     .journey-path 
     {
         flex-direction: column;
+        align-items: center;
         gap: 3rem;
         padding: 4rem 0;
     }
@@ -699,13 +711,17 @@ body
 
     .portal 
     {
-        width: absolute;
-        height: absolute;
+        width: 200px;
+        height: 300px;
     }
 
     .portal-icon 
     {
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         font-size: 3rem;
+        
     }
 
     .portal-icon img 
@@ -755,12 +771,16 @@ body
 
     .portal 
     {
-        width: absolute;
-        height: absolute;
+        
+        width: 140px;
+        height: 200px;
     }
 
     .portal-icon 
     {
+         top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         font-size: 2.5rem;
     }
 
@@ -768,8 +788,14 @@ body
     {
         max-width: 50px;
         max-height: 50px;
+        
     }
 
+    .portal-inner::after 
+    {
+        width: 90px;
+        height: 90px;
+    }
     .traveler 
     {
         font-size: 2.5rem;
@@ -794,5 +820,11 @@ body
     {
         left: 2.5px;
         top: -10px;
+    }
+
+    .portal-label
+    {
+
+        font-size: 1rem;
     }
 }
