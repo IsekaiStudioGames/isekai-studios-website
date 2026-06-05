@@ -325,8 +325,8 @@ body
 
 .portal-webgame .portal-inner,
 .portal-webgame .station-number {
-    border-color: #f59e0b;
-    color: #f59e0b;
+    border-color: #10b981;
+    color: #10b981;
 }
 
 /*
@@ -608,6 +608,20 @@ body
     color: #ec4899;
     font-size: 1rem;
     font-weight: 600;
+}
+
+/* Placeholder for the webgame */
+.webgame-placeholder
+{
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    max-height: 450px;
+    object-fit: contain;
+    margin: 1.5rem auto 0;
+    border-radius: 15px;
+    border: 3px solid rgba(255, 165, 0, 0.7);
+    box-shadow: 0 0 30px rgba(255, 165, 0, 0.35);
 }
 
 /* Responsive Design */
