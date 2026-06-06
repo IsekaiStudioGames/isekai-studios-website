@@ -5,7 +5,8 @@
     box-sizing: border-box;
 }
 
-body {
+body
+{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #0a0e27 0%, #1a1d3d 100%);
     color: #ffffff;
@@ -13,7 +14,8 @@ body {
     min-height: 100vh;
 }
 
-.cursor-star {
+.cursor-star
+{
     position: fixed;
     width: 6px;
     height: 6px;
@@ -25,12 +27,15 @@ body {
     animation: fadeOut 0.8s ease-out forwards;
 }
 
-@keyframes fadeOut {
-    0% {
+@keyframes fadeOut
+{
+    0% 
+    {
         opacity: 1;
         transform: scale(1);
     }
-    100% {
+    100% 
+    {
         opacity: 0;
         transform: scale(0.3);
     }
@@ -106,9 +111,10 @@ body {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     max-width: 1400px;
     width: 100%;
+    margin: 0 auto;
     gap: 2rem;
 }
 
@@ -141,13 +147,16 @@ body {
     flex-direction: column;
     align-items: center;
     z-index: 1;
-    flex: 1;
+    flex: 0 0 auto ;
 }
 
 .portal 
 {
-    width: 200px;
-    height: 300px;
+    /* width: 200px; */
+    width: clamp(80px, 12vw, 200px);
+    /* height: 300px; */
+    height: clamp(120px,18vw, 300px);
+    flex-shrink: 1;
     border-radius: 0;
     display: flex;
     align-items: center;
@@ -158,20 +167,21 @@ body {
     margin-bottom: 1rem;
 }
 
-.portal-inner 
+.portal-inner
 {
     width: 100%;
     height: 100%;
-    border-radius: 0;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background: rgba(20, 20, 40, 0.8);
     backdrop-filter: blur(5px);
-    border: 4px solid;
+    border: 4px outset;
     position: relative;
     overflow: hidden;
+    transform-style: preserve-3d;
 }
 
 .portal-inner::before 
@@ -189,8 +199,10 @@ body {
     content: '';
     position: absolute;
     top: 5%;
-    width: 180px;
-    height: 180px;
+    /* width: 180px; */
+    width:clamp(115px,8vw,100px);
+    /* height: 180px; */
+    height:clamp(115px,8vw,100px);
     border-radius: 50%;
     border: 2px dashed;
     border-color: inherit;
@@ -218,19 +230,51 @@ body {
 
 .portal:hover .portal-inner 
 {
-    box-shadow: 0 0 40px currentColor, inset 0 0 20px currentColor;
+   box-shadow: 0 0 40px currentColor, inset 0 0 20px currentColor;
+       
+}
+
+ .portal:hover .portal-inner
+{
+    /* flip animation */
+    animation: portalFlip 1s ease forwards;
+    
+}
+
+.portal:hover .portal-label
+{
+    animation: portalFlip 1s ease forwards;
+    /* Hide backside during flip */
+    backface-visibility: hidden;
+    
+}
+
+.portal:hover .portal-icon
+{
+    animation: portalFlip 1s ease forwards;
+    /* Hide backside during flip */
+    backface-visibility: hidden;
+    
+}
+
+
+@keyframes portalFlip{
+    0% { transform: perspective(600px) rotateY(0deg); }
+    100% { transform: perspective(600px) rotateY(180deg); }
 }
 
 .portal-icon 
 {
     position: absolute;
-    top: 35%;
+    top: calc(5% + clamp(20px, 4vw, 90px)); 
     left: 50%;
-    transform: translate(-50% ,-50%);
-    font-size: 3rem;
-    margin-bottom: 50px;
+    transform: translate(-50%, -50%);
+    font-size: clamp(1rem, 2.5vw, 3rem);
     z-index: 1;
     filter: drop-shadow(0 0 10px currentColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .portal-icon img 
@@ -251,7 +295,7 @@ body {
 {
     position: absolute;
     bottom: 10px;
-    font-size: 30px;
+    font-size: clamp(8px,1.2vw,30px);
     font-weight: 700;
     color: rgb(221, 0, 255);
     z-index: 1;
@@ -310,6 +354,12 @@ body {
     color: #f59e0b;
 }
 
+.portal-webgame .portal-inner,
+.portal-webgame .station-number {
+    border-color: #f59e0b;
+    color: #f59e0b;
+}
+
 /*
 
 /* Walking character - custom running figure 
@@ -336,8 +386,9 @@ body {
 }
 */
 
-/* Head */
-.traveler::after {
+/* Head 
+.traveler::after
+{
     content: '';
     position: absolute;
     width: 25px;
@@ -347,14 +398,16 @@ body {
     top: -20px;
     left: 7.5px;
     box-shadow: 0 0 15px rgba(255, 165, 0, 0.6);
-}
+}  */
 
-@keyframes walk {
+@keyframes walk
+{
     0% { left: 5%; }
     100% { left: 95%; }
 }
 
-.info-panel {
+.info-panel
+{
     position: fixed;
     bottom: 2rem;
     left: 2rem;
@@ -368,20 +421,23 @@ body {
     box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
 }
 
-.info-panel h3 {
+.info-panel h3 
+{
     color: #ec4899;
     margin-bottom: 1rem;
     font-size: 1.3rem;
 }
 
-.info-panel p {
+.info-panel p
+{
     color: #c4b5fd;
     font-size: 0.95rem;
     line-height: 1.7;
     margin-bottom: 0.5rem;
 }
 
-.modal {
+.modal 
+{
     display: none;
     position: fixed;
     top: 0;
@@ -395,16 +451,19 @@ body {
     animation: fadeIn 0.3s;
 }
 
-@keyframes fadeIn {
+@keyframes fadeIn 
+{
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-.modal.active {
+.modal.active 
+{
     display: flex;
 }
 
-.modal-content {
+.modal-content 
+{
     background: linear-gradient(135deg, #0a0e27 0%, #1a1d3d 50%, #2d1b4e 100%);
     padding: 3rem;
     border-radius: 20px;
@@ -417,18 +476,22 @@ body {
     animation: slideUp 0.4s ease-out;
 }
 
-@keyframes slideUp {
-    from { 
+@keyframes slideUp 
+{
+    from 
+    { 
         opacity: 0;
         transform: translateY(50px);
     }
-    to { 
+    to 
+    { 
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-.modal-close {
+.modal-close 
+{
     position: fixed;
     top: 1rem;
     right: 1rem;
@@ -448,12 +511,14 @@ body {
     z-index: 1001;
 }
 
-.modal-close:hover {
+.modal-close:hover 
+{
     background: rgba(236, 72, 153, 0.4);
     transform: rotate(90deg) scale(1.1);
 }
 
-.modal h2 {
+.modal h2 
+{
     font-size: 2.8rem;
     background: linear-gradient(135deg, #8b5cf6, #ec4899);
     -webkit-background-clip: text;
@@ -463,14 +528,16 @@ body {
     font-weight: 800;
 }
 
-.modal p {
+.modal p 
+{
     color: #c4b5fd;
     line-height: 1.9;
     margin-bottom: 1.2rem;
     font-size: 1.1rem;
 }
 
-.game-card {
+.game-card 
+{
     background: rgba(30, 30, 60, 0.7);
     border: 3px solid rgba(255, 165, 0, 0.5);
     border-radius: 15px;
@@ -482,7 +549,8 @@ body {
     overflow: hidden;
 }
 
-.game-card::before {
+.game-card::before 
+{
     content: '';
     position: absolute;
     top: 0;
@@ -493,17 +561,20 @@ body {
     transition: left 0.5s;
 }
 
-.game-card:hover::before {
+.game-card:hover::before 
+{
     left: 100%;
 }
 
-.game-card:hover {
+.game-card:hover 
+{
     transform: translateY(-8px);
     border-color: rgba(255, 165, 0, 0.9);
     box-shadow: 0 15px 40px rgba(255, 165, 0, 0.4);
 }
 
-.game-card img {
+.game-card img 
+{
     width: 100%;
     max-height: 250px;
     object-fit: contain;
@@ -512,13 +583,15 @@ body {
     border: 2px solid rgba(139, 92, 246, 0.3);
 }
 
-.game-card h3 {
+.game-card h3 
+{
     color: #ffa500;
     margin-bottom: 1rem;
     font-size: 1.8rem;
 }
 
-.game-badge {
+.game-badge 
+{
     display: inline-block;
     background: linear-gradient(135deg, #8b5cf6, #ec4899);
     padding: 0.3rem 1rem;
@@ -529,14 +602,16 @@ body {
     font-weight: 600;
 }
 
-.team-grid {
+.team-grid 
+{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     margin-top: 1.5rem;
 }
 
-.team-member {
+.team-member 
+{
     background: rgba(30, 30, 60, 0.7);
     border: 2px solid rgba(139, 92, 246, 0.4);
     border-radius: 15px;
@@ -545,74 +620,95 @@ body {
     transition: all 0.3s;
 }
 
-.team-member:hover {
+.team-member:hover 
+{
     border-color: rgba(255, 165, 0, 0.8);
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
 }
 
-.team-member h4 {
+.team-member h4 
+{
     color: #a78bfa;
     margin-bottom: 0.5rem;
     font-size: 1.3rem;
 }
 
-.team-member p {
+.team-member p 
+{
     color: #ec4899;
     font-size: 1rem;
     font-weight: 600;
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
-    .journey-path {
+@media (max-width: 1200px) 
+{
+    .journey-path 
+    {
         gap: 1rem;
+        align-items: center;
     }
 
-    .portal {
-        width: absolute;
-        height: absolute;
+    .portal 
+    {
+        width: 140px;
+        height: 220px;
     }
 
-    .portal-icon {
+    .portal-icon 
+    {
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         font-size: 2.5rem;
     }
 
-    .portal-icon img {
+    .portal-icon img 
+    {
         max-width: 50px;
         max-height: 50px;
     }
 
-    .portal-label {
-        font-size: 24px;
+    .portal-label 
+    {
+        font-size: 16px;
     }
 }
 
-@media (max-width: 768px) {
-    body {
+@media (max-width: 768px) 
+{
+    body 
+    {
         overflow-y: auto;
     }
 
-    .logo-center h1 {
+    .logo-center h1 
+    {
         font-size: 2rem;
     }
 
-    .logo-center p {
+    .logo-center p 
+    {
         font-size: 1rem;
     }
 
-    .journey-container {
+    .journey-container 
+    {
         padding: 2rem 1rem;
         min-height: auto;
     }
 
-    .journey-path {
+    .journey-path 
+    {
         flex-direction: column;
+        align-items: center;
         gap: 3rem;
         padding: 4rem 0;
     }
 
-    .journey-path::before {
+    .journey-path::before 
+    {
         left: 50%;
         top: 0;
         bottom: 0;
@@ -629,7 +725,8 @@ body {
             #f59e0b 100%);
     }
 
-    .traveler {
+    .traveler 
+    {
         left: 50%;
         bottom: auto;
         top: 0;
@@ -637,30 +734,40 @@ body {
         animation: walkVertical 20s linear infinite;
     }
 
-    @keyframes walkVertical {
+    @keyframes walkVertical 
+    {
         0% { top: 0; }
         100% { top: calc(100% - 80px); }
     }
 
-    .portal {
-        width: absolute;
-        height: absolute;
+    .portal 
+    {
+        width: 200px;
+        height: 300px;
     }
 
-    .portal-icon {
+    .portal-icon 
+    {
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         font-size: 3rem;
+        
     }
 
-    .portal-icon img {
+    .portal-icon img 
+    {
         max-width: 60px;
         max-height: 60px;
     }
 
-    .portal-label {
+    .portal-label 
+    {
         font-size: 24px;
     }
 
-    .info-panel {
+    .info-panel 
+    {
         position: relative;
         bottom: auto;
         left: auto;
@@ -668,58 +775,88 @@ body {
         max-width: calc(100% - 2rem);
     }
 
-    .modal-content {
+    .modal-content 
+    {
         width: calc(100% - 2rem);
         padding: 2rem 1.5rem;
         margin: 1rem;
     }
 
-    .modal h2 {
+    .modal h2 
+    {
         font-size: 2rem;
     }
 
-    .team-grid {
+    .team-grid 
+    {
         grid-template-columns: 1fr;
     }
 }
 
-@media (max-width: 480px) {
-    .logo-center h1 {
-        font-size: 1.6rem;
+@media (max-width: 480px) 
+{
+    .logo-center h1 
+    {
+        font-size: 1.5rem;
+        
     }
 
-    .portal {
-        width: absolute;
-        height: absolute;
+    .portal 
+    {
+        
+        width: 140px;
+        height: 200px;
     }
 
-    .portal-icon {
+    .portal-icon 
+    {
+         top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         font-size: 2.5rem;
     }
 
-    .portal-icon img {
+    .portal-icon img 
+    {
         max-width: 50px;
         max-height: 50px;
+        
     }
 
-    .traveler {
+    .portal-inner::after 
+    {
+        width: 90px;
+        height: 90px;
+    }
+    .traveler 
+    {
         font-size: 2.5rem;
     }
 
     /* Rotate character to face downward on mobile */
     .traveler::before,
-    .traveler::after {
+    .traveler::after 
+    {
         transform: rotate(90deg);
         transform-origin: center;
     }
 
-    .traveler::before {
+    .traveler::before 
+    {
         left: -5px;
         top: 10px;
     }
 
-    .traveler::after {
+
+    .traveler::after 
+    {
         left: 2.5px;
         top: -10px;
+    }
+
+    .portal-label
+    {
+
+        font-size: 1rem;
     }
 }
