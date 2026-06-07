@@ -114,17 +114,39 @@
     <div class="modal-content">
         <button class="modal-close" onclick="closeModal('webgame')">×</button>
 
-        <h2>🎮 Webgame Prototype</h2>
+        <h2>🎮 Bubblepop</h2>
 
         <p>
-            A small browser game is coming soon! For now, behold:
-            our extremely advanced proof-of-concept image.
+            Pop every bubble before it escapes!
         </p>
 
-        <img
-            class="webgame-placeholder"
-            src="Images/bunnylongear.jpeg"
-            alt="Webgame prototype placeholder"
-        >
+        <div class="bubble-game">
+    <div class="game-header">
+        <span>🫧 Bubble Pop</span>
+        <span>Score: <span id="score">0</span></span>
+    </div>
+
+    <div id="game-area">
+        <button id="start-button">Start Game</button>
+
+        <div id="score-entry" class="score-entry hidden">
+            <h3>New Score: <span id="final-score">0</span></h3>
+            <p>Enter your initials</p>
+
+            <input
+                id="initials-input"
+                type="text"
+                maxlength="3"
+                placeholder="AAA"
+                autocomplete="off"
+            >
+
+            <button id="save-score-button">Save Score</button>
+        </div>
+    </div>
+
+    <div class="leaderboard">
+        <h3>🏆 High Scores</h3>
+        <ol id="leaderboard-list"></ol>
     </div>
 </div>
