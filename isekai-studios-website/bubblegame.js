@@ -1,12 +1,11 @@
-const startButton = document.getElementById("start-button");
-const gameArea = document.getElementById("game-area");
-const scoreDisplay = document.getElementById("score");
-
-const scoreEntry = document.getElementById("score-entry");
-const finalScoreDisplay = document.getElementById("final-score");
-const initialsInput = document.getElementById("initials-input");
-const saveScoreButton = document.getElementById("save-score-button");
-const leaderboardList = document.getElementById("leaderboard-list");
+let startButton;
+let gameArea;
+let scoreDisplay;
+let scoreEntry;
+let finalScoreDisplay;
+let initialsInput;
+let saveScoreButton;
+let leaderboardList;
 
 let score = 0;
 let speed = 85;
@@ -14,25 +13,49 @@ let currentBubble = null;
 let animationFrame = null;
 let gameRunning = false;
 
-startButton.addEventListener("click", startGame);
-saveScoreButton.addEventListener("click", saveScore);
-
-initialsInput.addEventListener("input", function()
+function initBubbleGame()
 {
-    initialsInput.value = initialsInput.value
-        .replace(/[^a-zA-Z]/g, "")
-        .toUpperCase();
-});
+    startButton = document.getElementById("start-button");
+    gameArea = document.getElementById("game-area");
+    scoreDisplay = document.getElementById("score");
+    scoreEntry = document.getElementById("score-entry");
+    finalScoreDisplay = document.getElementById("final-score");
+    initialsInput = document.getElementById("initials-input");
+    saveScoreButton = document.getElementById("save-score-button");
+    leaderboardList = document.getElementById("leaderboard-list");
 
-initialsInput.addEventListener("keydown", function(event)
-{
-    if (event.key === "Enter")
+    if (!startButton || !gameArea)
     {
-        saveScore();
+        return;
     }
-});
 
-renderLeaderboard();
+    if (startButton.dataset.initialized === "true")
+    {
+        return;
+    }
+
+startButton.dataset.initialized = "true";
+
+    startButton.addEventListener("click", startGame);
+    saveScoreButton.addEventListener("click", saveScore);
+
+    initialsInput.addEventListener("input", function()
+    {
+        initialsInput.value = initialsInput.value
+            .replace(/[^a-zA-Z]/g, "")
+            .toUpperCase();
+    });
+
+    initialsInput.addEventListener("keydown", function(event)
+    {
+        if (event.key === "Enter")
+        {
+            saveScore();
+        }
+    });
+
+    renderLeaderboard();
+}
 
 function startGame()
 {
