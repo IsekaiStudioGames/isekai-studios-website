@@ -60,7 +60,7 @@
         <div class="journey-path">
             <!-- Station 1: Lore -->
             <div class="portal-station">
-                <a href="#" class="portal portal-lore" onclick="openModal('lore'); return false;">
+                <a href="#" class="portal portal-lore" data-modal="lore">
                     <div class="portal-inner">
                         <div class="portal-icon"><img src="Images/OldBook_2.png" alt="Lore Book"></div>
                         <div class="portal-label">Lore</div>
@@ -71,7 +71,7 @@
 
             <!-- Station 2: Team -->
             <div class="portal-station">
-                <a href="#" class="portal portal-team" onclick="openModal('team'); return false;">
+                <a href="#" class="portal portal-team" data-modal="team">
                     <div class="portal-inner">
                         <div class="portal-icon">⚔️</div>
                         <div class="portal-label">The Heroes</div>
@@ -82,7 +82,7 @@
 
             <!-- Station 3: Contact -->
             <div class="portal-station">
-                <a href="#" class="portal portal-contact" onclick="openModal('contact'); return false;">
+                <a href="#" class="portal portal-contact" data-modal="contact">
                     <div class="portal-inner">
                         <div class="portal-icon">💌</div>
                         <div class="portal-label">Messenger</div>
@@ -93,7 +93,7 @@
 
             <!-- Station 4: Guild Hall -->
             <div class="portal-station">
-                <a href="#" class="portal portal-home" onclick="openModal('home'); return false;">
+                <a href="#" class="portal portal-home" data-modal="home">
                     <div class="portal-inner">
                         <div class="portal-icon">🏰</div>
                         <div class="portal-label">Guild Hall</div>
@@ -104,7 +104,7 @@
 
             <!-- Station 5: Quest Board -->
             <div class="portal-station">
-                <a href="#" class="portal portal-games" onclick="openModal('games'); return false;">
+                <a href="#" class="portal portal-games" data-modal="games">
                     <div class="portal-inner">
                         <div class="portal-icon">🎮</div>
                         <div class="portal-label">Quest Board</div>
@@ -115,7 +115,7 @@
 
             <!-- Station 6: Chronicles -->
             <div class="portal-station">
-                <a href="#" class="portal portal-news" onclick="openModal('news'); return false;">
+                <a href="#" class="portal portal-news" data-modal="news">
                     <div class="portal-inner">
                         <div class="portal-icon">📰</div>
                         <div class="portal-label">Chronicles</div>
@@ -127,7 +127,7 @@
 
             <!-- Station 7: Webgame -->
             <div class="portal-station">
-                <a href="#" class="portal portal-webgame" onclick="openModal('webgame'); return false;">
+                <a href="#" class="portal portal-webgame" data-modal="webgame">
                     <div class="portal-inner">
                         <div class="portal-icon">🎮</div>
                         <div class="portal-label">Webgame</div>
@@ -152,6 +152,7 @@
    
     <script src="script.js"></script>
     <script src="bubblegame.js"></script>
+    <script src="portalanimation.js"></script>
 
 </body>
 </html>
