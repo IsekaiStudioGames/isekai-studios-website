@@ -234,26 +234,11 @@ body
        
 }
 
- .portal:hover .portal-inner
+ .portal:hover .portal-inner, .portal:hover .portal-label,
+.portal:hover .portal-icon img
 {
     /* flip animation */
     animation: portalFlip 1s ease forwards;
-    
-}
-
-.portal:hover .portal-label
-{
-    animation: portalFlip 1s ease forwards;
-    /* Hide backside during flip */
-    backface-visibility: hidden;
-    
-}
-
-.portal:hover .portal-icon
-{
-    animation: portalFlip 1s ease forwards;
-    /* Hide backside during flip */
-    backface-visibility: hidden;
     
 }
 
@@ -275,6 +260,7 @@ body
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 .portal-icon img 
@@ -284,6 +270,7 @@ body
     max-width: 60px;
     max-height: 60px;
     object-fit: contain;
+    backface-visibility: hidden;
 }
 
 .portal-lore .portal-icon img 
@@ -302,7 +289,7 @@ body
     text-shadow: 0 0 10px rgba(0,0,0,0.8);
     text-transform: uppercase;
     letter-spacing: 1px;
-    
+    backface-visibility: hidden;
     
 }
 
