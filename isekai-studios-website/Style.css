@@ -258,45 +258,69 @@ body
     50% { transform: scale(1.2); opacity: 0.9; }
 }
 
-.portal:hover 
+/* .portal:hover 
 {
     transform: scale(1.15);
-}
+} */
 
- .portal:hover .portal-inner 
+
+ /* .portal:hover .portal-inner 
 {
    box-shadow: 0 0 40px currentColor, inset 0 0 20px currentColor;
        
-} 
+}  */
 
-  .portal:hover .portal-inner
+
+
+  /* .portal:hover .portal-inner
 {
     /* flip animation */
     animation: portalFlip 1s ease forwards;
     
-} */
+}  */
 
- .portal:hover .portal-label
+ /* .portal:hover .portal-label
 {
     animation: portalFlip 1s ease forwards;
     /* Hide backside during flip */
     backface-visibility: hidden;
     
-} */
+}  */
 
- .portal:hover .portal-icon
+ /* .portal:hover .portal-icon
 {
     animation: portalFlip 1s ease forwards;
     /* Hide backside during flip */
     backface-visibility: hidden;
     
-} 
+}  
+/*
 
-
-@keyframes portalFlip{
+/* @keyframes portalFlip{
     0% { transform: perspective(600px) rotateY(0deg); }
     100% { transform: perspective(600px) rotateY(180deg); }
-} 
+    
+}  */
+
+/* Lore has real card flip - skip old animation */
+.portal-lore:hover .portal-inner {
+    animation: none;
+}
+
+/* All other portals use old flip until card faces are built */
+.portal-team:hover .portal-inner,
+.portal-contact:hover .portal-inner,
+.portal-home:hover .portal-inner,
+.portal-games:hover .portal-inner,
+.portal-news:hover .portal-inner,
+.portal-webgame:hover .portal-inner {
+    animation: portalFlip 1s ease forwards;
+}
+
+@keyframes portalFlip {
+    0%   { transform: perspective(600px) rotateY(0deg); }
+    100% { transform: perspective(600px) rotateY(180deg); }
+}
 
 .portal-icon {
     position: absolute;
