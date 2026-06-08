@@ -261,49 +261,17 @@ body
     50% { transform: scale(1.2); opacity: 0.9; }
 }
 
-/* .portal:hover 
+ .portal:hover 
 {
     transform: scale(1.15);
-} */
+} 
 
 
- /* .portal:hover .portal-inner 
+  .portal:hover .portal-inner, .card-front 
 {
    box-shadow: 0 0 40px currentColor, inset 0 0 20px currentColor;
        
-}  */
-
-
-
-  /* .portal:hover .portal-inner
-{
-    /* flip animation */
-    animation: portalFlip 1s ease forwards;
-    
-}  */
-
- /* .portal:hover .portal-label
-{
-    animation: portalFlip 1s ease forwards;
-    /* Hide backside during flip */
-    backface-visibility: hidden;
-    
-}  */
-
- /* .portal:hover .portal-icon
-{
-    animation: portalFlip 1s ease forwards;
-    /* Hide backside during flip */
-    backface-visibility: hidden;
-    
 }  
-/*
-
-/* @keyframes portalFlip{
-    0% { transform: perspective(600px) rotateY(0deg); }
-    100% { transform: perspective(600px) rotateY(180deg); }
-    
-}  */
 
 /* Lore has real card flip - skip old animation */
 .portal-lore:hover .portal-inner {
@@ -1091,4 +1059,16 @@ body
 
         font-size: 1rem;
     }
+
+    /* Portal expansion effect */
+    .portal.expanding
+{
+    /* expand and fade out */
+    transform: scale(20);
+    opacity: 0;
+    z-index: 2000; 
+    
+    
+    
+}
 }

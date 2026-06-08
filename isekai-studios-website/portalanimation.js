@@ -14,10 +14,11 @@ document.querySelectorAll('.portal').forEach(portal =>
         this.addEventListener('transitionend', function handler()
         {
             // Open the modal after the animation completes
-            openModal(modalName);
-            // Clean up the animation class
-            this.classList.remove('expanding');
-
+            setTimeout(() => {
+            openModal(modalName)
+            }, 300); // slight delay to ensure animation is fully done
+            
+            this.classList.remove('expanding'); // Reset the portal state
             this.removeEventListener('transitionend', handler);
         });
     });
