@@ -1,0 +1,28 @@
+
+.logo-center 
+{
+    text-align: center;
+    padding: 2rem 0;
+    position: relative;
+    z-index: 100;
+}
+
+.logo-center h1 
+{
+    font-size: 3rem;
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo-center p 
+{
+    color: #ffa500;
+    font-size: 1.2rem;
+    font-style: italic;
+}
