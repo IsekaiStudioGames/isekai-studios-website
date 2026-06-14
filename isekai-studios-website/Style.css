@@ -1006,8 +1006,10 @@ body
     transform: scale(20);
     opacity: 0;
     z-index: 2000; 
-    
-    
-    
+}
+
+.portal.hidden, .card-front.hidden
+{
+    visibility: hidden;
 }
 }

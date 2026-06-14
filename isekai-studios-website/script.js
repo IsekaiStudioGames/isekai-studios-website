@@ -46,6 +46,12 @@ for (let i = 0; i < 300; i++) {
 // Modal functions
 function openModal(id) {
     document.getElementById('modal-' + id).classList.add('active');
+
+    if (activeportal) {
+        // Reset the portal state after opening the modal
+        activeportal.classList.remove('expanding', 'hiden');
+        activeportal = null;
+    }
 }
 
 function closeModal(id) {
