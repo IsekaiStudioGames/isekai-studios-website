@@ -205,7 +205,7 @@ body
 }
 
 /* All other portals use old flip until card faces are built */
-.portal-team:hover .portal-inner,
+/* .portal-team:hover .portal-inner, */
 .portal-contact:hover .portal-inner,
 .portal-home:hover .portal-inner,
 .portal-games:hover .portal-inner,
