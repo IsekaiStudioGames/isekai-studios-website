@@ -1000,3 +1000,17 @@ body
     visibility: hidden;
 }
 }
+
+@keyframes ShootingStars
+{
+    0% 
+    {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% 
+    {
+        transform: translate(600px, 300px);
+        opacity: 0;
+    }
+}
