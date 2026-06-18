@@ -1,0 +1,18 @@
+/* Shooting Stars class */
+.shootingstars {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  /* stars visual */
+  background: 
+  linear-gradient(90deg, 
+                white, 
+                transparent
+                );
+
+  /* Stops mouse interuptions */
+  pointer-events: none;
+  
+  /*z-index: 1;*/
+ 
+}
