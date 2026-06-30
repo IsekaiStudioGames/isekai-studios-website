@@ -205,14 +205,14 @@ body
 }
 
 /* All other portals use old flip until card faces are built */
-/* .portal-team:hover .portal-inner, */
-/* .portal-contact:hover .portal-inner, */
+ /* .portal-team:hover .portal-inner, 
+ .portal-contact:hover .portal-inner, 
 .portal-home:hover .portal-inner,
 .portal-games:hover .portal-inner,
-.portal-news:hover .portal-inner,
-.portal-webgame:hover .portal-inner {
+.portal-news:hover .portal-inner, */
+/* .portal-webgame:hover .portal-inner {
     animation: portalFlip 1s ease forwards;
-}
+} */
 
 @keyframes portalFlip {
     0%   { transform: perspective(600px) rotateY(0deg); }
