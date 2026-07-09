@@ -589,12 +589,26 @@ body
     font-size: 1.3rem;
 }
 
+.team-link 
+{
+    color: inherit;
+    text-decoration: none;
+}
+
+.team-link:hover 
+{
+    color: #ff8fd8;
+    text-shadow: 0 0 10px #ff8fd8;
+}
+
 .team-member p 
 {
     color: #ec4899;
     font-size: 1rem;
     font-weight: 600;
 }
+
+
 
 /* Bubble Pop webgame */
 .bubble-game
