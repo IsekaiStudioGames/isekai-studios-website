@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,7 @@
             box-sizing: border-box;
         }
 
-        body
+        body 
         {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #000000 0%, #0a0e27 100%);
@@ -44,28 +45,28 @@
         @keyframes twinkle 
         {
             0%, 100% 
-            { 
-                opacity: 0.2; 
+            {
+                opacity: 0.2;
             }
 
             50% 
-            { 
-                opacity: 1; 
+            {
+                opacity: 1;
             }
         }
 
         @keyframes portalPulse 
         {
             0%, 100% 
-            { 
-                transform: scale(0.9); 
-                opacity: 0.4; 
+            {
+                transform: scale(0.9);
+                opacity: 0.4;
             }
 
             50% 
-            { 
-                transform: scale(1.2); 
-                opacity: 0.9; 
+            {
+                transform: scale(1.2);
+                opacity: 0.9;
             }
         }
 
@@ -178,7 +179,8 @@
         }
 
         .dev-card,
-        .devbxnny-about 
+        .devbxnny-about,
+        .devbxnny-socials 
         {
             background: rgba(30, 30, 60, 0.75);
             border: 2px solid rgba(139, 92, 246, 0.45);
@@ -196,7 +198,8 @@
         }
 
         .dev-card h2,
-        .devbxnny-about h2 
+        .devbxnny-about h2,
+        .devbxnny-socials h2 
         {
             color: #ffa500;
             margin-bottom: 1rem;
@@ -209,12 +212,85 @@
             color: #c4b5fd;
             line-height: 1.8;
             font-size: 1.05rem;
+            margin-bottom: 1rem;
         }
 
         .devbxnny-about 
         {
             margin-top: 2rem;
             border-color: rgba(236, 72, 153, 0.5);
+        }
+
+        .devbxnny-socials 
+        {
+            margin-top: 2rem;
+            border-color: rgba(236, 72, 153, 0.5);
+        }
+
+        .social-links 
+        {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .social-card 
+        {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(10, 14, 39, 0.8);
+            border: 2px solid rgba(139, 92, 246, 0.45);
+            border-radius: 15px;
+            padding: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-card:hover 
+        {
+            transform: translateY(-5px);
+            border-color: #ff8fd8;
+            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.3);
+        }
+
+        .social-icon 
+        {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+            flex-shrink: 0;
+            filter: invert(1) drop-shadow(0 0 8px rgba(236, 72, 153, 0.7));
+            transition: all 0.3s;
+        }
+
+        .social-card:hover .social-icon 
+        {
+            transform: scale(1.12);
+            filter: invert(1) drop-shadow(0 0 10px rgba(255, 165, 0, 0.9));
+        }
+
+        .social-card h3 
+        {
+            color: #ec4899;
+            margin-bottom: 0.25rem;
+        }
+
+        .social-card p 
+        {
+            margin: 0;
+        }
+
+        .social-username 
+        {
+            color: #c4b5fd;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .social-username:hover 
+        {
+            color: #ffa500;
+            text-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
         }
 
         @media (max-width: 768px) 
@@ -238,6 +314,11 @@
             {
                 grid-template-columns: 1fr;
             }
+
+            .social-links 
+            {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -246,7 +327,7 @@
     <div class="stars-bg" id="stars-bg"></div>
 
     <main class="devbxnny-page">
-        <a href="index.html" class="back-link">← Back to Isekai Studios</a>
+        <a href="../index.html" class="back-link"></a>
 
         <section class="devbxnny-hero">
             <div class="devbxnny-avatar">
@@ -259,7 +340,7 @@
                 <h1>devbxnny</h1>
 
                 <p>
-                    Hi, I’m devbxnny. I'm a game developer focused on AI behavior, UI, 
+                    Hi, I’m devbxnny. I'm a game developer focused on AI behavior, UI,
                     and weird little interactive experiences with too much personality.
                 </p>
             </div>
@@ -269,7 +350,7 @@
             <div class="dev-card">
                 <h2>🎮 What I Do</h2>
                 <p>
-                    I build gameplay features, enemy behaviors, player systems, and UI interactions. 
+                    I build gameplay features, enemy behaviors, player systems, and UI interactions.
                     I like making mechanics feel readable, reactive, and fun to mess with.
                 </p>
             </div>
@@ -293,29 +374,77 @@
             <div class="dev-card">
                 <h2>🐇 Current Quest</h2>
                 <p>
-                    Supporting upcoming Isekai Studios projects with gameplay systems, AI behavior, UI work,
-                    and the little details that make each world feel alive.
-                </p>    
+                    Currently working on the Isekai Studios website, including page layout,
+                    visual polish, interactive navigation, team/member pages, and showcasing
+                    upcoming studio projects.
+                </p>
             </div>
         </section>
-<section class="devbxnny-about">
-    <h2>About Me</h2>
-    <p>
-        Outside of development, I’m usually playing horror games or games where there is at least one character I can get
-        way too attached to.
-    </p>
 
-    <p>
-        I also love Vocaloid, metal music, drawing, and taking care of my gargoyle gecko,
-        Alphys, my tiny lizard creature who deserves her own side quest.
-    </p>
+        <section class="devbxnny-about">
+            <h2>About Me</h2>
 
-    <p>
-    One of my biggest creative inspirations is Toby Fox. I love the way his games mix humor,
-    emotion, music, strange characters, and unforgettable story moments into something that
-    feels deeply personal and completely unique.
-</p>
-</section>
+            <p>
+                Outside of development, I’m usually playing horror games or games where there is at least one character
+                I can get way too attached to.
+            </p>
+
+            <p>
+                I also love Vocaloid, metal music, drawing, and taking care of my gargoyle gecko,
+                Alphys, my tiny lizard creature who deserves her own side quest.
+            </p>
+
+            <p>
+                One of my biggest creative inspirations is Toby Fox. I love the way his games mix humor,
+                emotion, music, strange characters, and unforgettable story moments into something that
+                feels deeply personal and completely unique.
+            </p>
+        </section>
+
+        <section class="devbxnny-socials">
+            <h2>Find Me Online</h2>
+
+            <div class="social-links">
+                <div class="social-card">
+                    <img src="../Images/Socials/insta.png" alt="Instagram icon" class="social-icon">
+
+                    <div>
+                        <h3>Instagram</h3>
+                        <p>
+                            <a href="https://www.instagram.com/devbxnny" target="_blank" class="social-username">
+                                @devbxnny
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="social-card">
+                    <img src="../Images/Socials/itchio-logo-textless-black.png" alt="itch.io icon" class="social-icon">
+
+                    <div>
+                        <h3>itch.io</h3>
+                        <p>
+                            <a href="https://devbxnny.itch.io/" target="_blank" class="social-username">
+                                devbxnny.itch.io
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="social-card">
+                    <img src="../Images/Socials/github.png" alt="GitHub icon" class="social-icon">
+
+                    <div>
+                        <h3>GitHub</h3>
+                        <p>
+                            <a href="https://github.com/devbxnny" target="_blank" class="social-username">
+                                @devbxnny
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <script>
@@ -338,4 +467,5 @@
         }
     </script>
 </body>
+
 </html>
