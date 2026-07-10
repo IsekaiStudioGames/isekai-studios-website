@@ -27,7 +27,9 @@
 
         <div class="team-grid">
             <div class="team-member">
-                <h4>🎮 Jesse Scott Adams</h4>
+                <h4>
+                    <a href="about-team-htmls/about_jesse_adams.html" class="team-link">🎮 Jesse Scott Adams</a>
+                </h4>
                 <p>Developer • World Builder</p>
             </div>
 
@@ -106,8 +108,8 @@
             <img src="Images/DGV/vince.png" alt="Don't Get Vinced">
             <h3>🌭 Don’t Get Vinced</h3>
             <p>
-                Rockstar City, Chicago, 1999. After crime boss Vince “The Viper” Malone steals a cloning virus and 
-                unleashes an army of himself, Doug — a chili dog-loving brawler — must fight back, stop the invasion, 
+                Rockstar City, Chicago, 1999. After crime boss Vince “The Viper” Malone steals a cloning virus and
+                unleashes an army of himself, Doug — a chili dog-loving brawler — must fight back, stop the invasion,
                 and save the city.
             </p>
             <span class="game-badge">⚡ IN DEVELOPMENT</span>
@@ -149,32 +151,26 @@
         </p>
 
         <div class="bubble-game">
-    <div class="game-header">
-        <span>🫧 Bubble Pop</span>
-        <span>Score: <span id="score">0</span></span>
-    </div>
+            <div class="game-header">
+                <span>🫧 Bubble Pop</span>
+                <span>Score: <span id="score">0</span></span>
+            </div>
 
-    <div id="game-area">
-        <button id="start-button">Start Game</button>
+            <div id="game-area">
+                <button id="start-button">Start Game</button>
 
-        <div id="score-entry" class="score-entry hidden">
-            <h3>New Score: <span id="final-score">0</span></h3>
-            <p>Enter your initials</p>
+                <div id="score-entry" class="score-entry hidden">
+                    <h3>New Score: <span id="final-score">0</span></h3>
+                    <p>Enter your initials</p>
 
-            <input
-                id="initials-input"
-                type="text"
-                maxlength="3"
-                placeholder="AAA"
-                autocomplete="off"
-            >
+                    <input id="initials-input" type="text" maxlength="3" placeholder="AAA" autocomplete="off">
 
-            <button id="save-score-button">Save Score</button>
+                    <button id="save-score-button">Save Score</button>
+                </div>
+            </div>
+
+            <div class="leaderboard">
+                <h3>🏆 High Scores</h3>
+                <ol id="leaderboard-list"></ol>
+            </div>
         </div>
-    </div>
-
-    <div class="leaderboard">
-        <h3>🏆 High Scores</h3>
-        <ol id="leaderboard-list"></ol>
-    </div>
-</div>
