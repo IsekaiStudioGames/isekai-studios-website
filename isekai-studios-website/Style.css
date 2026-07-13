@@ -7,11 +7,19 @@
 
 body
 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Minecraft", sans-serif;
     background: linear-gradient(135deg, #000000 0%, #0a0e27 100%);
     color: #ffffff;
     overflow-x: hidden;
     min-height: 100vh;
+}
+
+button,
+input,
+textarea,
+select
+{
+    font-family: "Minecraft", sans-serif;
 }
 
 @keyframes fadeOut
@@ -26,6 +34,27 @@ body
         opacity: 0;
         transform: scale(0.3);
     }
+}
+
+@font-face {
+    font-family: "Minecraft";
+    src: url("fonts/MinecraftRegular-Bmg3.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Minecraft";
+    src: url("fonts/MinecraftBold-nMK1.otf") format("opentype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Pixel Digivolve";
+    src: url("fonts/PixelDigivolve-mOm9.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
 
 .stars-bg 
@@ -589,12 +618,26 @@ body
     font-size: 1.3rem;
 }
 
+.team-link 
+{
+    color: inherit;
+    text-decoration: none;
+}
+
+.team-link:hover 
+{
+    color: #ff8fd8;
+    text-shadow: 0 0 10px #ff8fd8;
+}
+
 .team-member p 
 {
     color: #ec4899;
     font-size: 1rem;
     font-weight: 600;
 }
+
+
 
 /* Bubble Pop webgame */
 .bubble-game
@@ -755,6 +798,64 @@ body
     padding: 0.25rem 0;
     color: #c4b5fd;
     font-weight: bold;
+}
+
+.contact-link 
+{
+    color: #c4b5fd;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.contact-link:hover 
+{
+    color: #ffa500;
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
+}
+
+.contact-row 
+{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-icon-wrap
+{
+    width: 26px;
+    height: 26px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-icon 
+{
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 6px rgba(236, 72, 153, 0.7));
+}
+
+.contact-link 
+{
+    color: #c4b5fd;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.contact-link:hover 
+{
+    color: #ffa500;
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
+}
+
+.contact-icon 
+{
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(236, 72, 153, 0.7));
 }
 
 /* Responsive Design */
