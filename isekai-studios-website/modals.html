@@ -21,32 +21,58 @@
 <div id="modal-team" class="modal">
     <div class="modal-content">
         <button class="modal-close" onclick="closeModal('team')">×</button>
+
         <h2>⚔️ The Party</h2>
         <p>Meet the heroes bringing these worlds to life:</p>
+
         <div class="team-grid">
             <div class="team-member">
-                <h4>🎮 Jesse Scott Adams</h4>
+                <h4>
+                    <a href="about-team-htmls/about_jesse_adams.html" class="team-link">👾 Peacebaby313</a>
+                </h4>
                 <p>Developer • World Builder</p>
             </div>
+
             <div class="team-member">
-                <h4>🐍 Kcobra</h4>
-                <p>Developer • Code Mage</p>
+                <h4>
+                    <a href="about-team-htmls/about_kcobra.html" class="team-link">
+                        🐍 Kcobra
+                    </a>
+                </h4>
+
+                <p>Programming • Art • Creative Direction</p>
             </div>
+
             <div class="team-member">
-                <h4>🐺 Rokanhellhound1</h4>
-                <p>Developer • Quest Designer</p>
+                <h4>
+                    <a href="about-team-htmls/about_eclipse.html" class="team-link">
+                        🌘 Eclipse
+                    </a>
+                </h4>
+
+                <p>Developer • Animation • Visual Effects</p>
             </div>
+
             <div class="team-member">
-                <h4>🐻 ArcaneGummyBear</h4>
-                <p>Developer • System Architect</p>
+                <h4>
+                    <a href="about-team-htmls/about_arcanegummybear.html" class="team-link">
+                        🐻 ArcaneGummyBear
+                    </a>
+                </h4>
+                <p>Developer • Animation • Visual Effects</p>
             </div>
+
             <div class="team-member">
-                <h4>🐰 Devbxnny</h4>
+                <h4>
+                    <a href="about-team-htmls/about_devbxnny.html" class="team-link">🐰 Devbxnny</a>
+                </h4>
                 <p>Developer • AI Systems</p>
             </div>
         </div>
-        <p style="margin-top: 2rem; text-align: center;">Together, we form an adventuring party dedicated to creating
-            unforgettable gaming experiences!</p>
+
+        <p style="margin-top: 2rem; text-align: center;">
+            Together, we form an adventuring party dedicated to creating unforgettable gaming experiences!
+        </p>
     </div>
 </div>
 
@@ -55,9 +81,29 @@
         <button class="modal-close" onclick="closeModal('contact')">×</button>
         <h2>💌 Send a Message</h2>
         <p>Want to join our guild? Have a quest for us? Need a portal to somewhere specific?</p>
-        <p><strong>📧 Email:</strong> contact@isekaistudios.com</p>
-        <p><strong>🎮 Discord:</strong> Join our community (Coming Soon!)</p>
-        <p><strong>🐦 Social:</strong> Follow our development journey</p>
+        <p>
+            <strong>📧 Email:</strong>
+            <a href="mailto:isekaistudios1025@gmail.com" class="contact-link">
+                isekaistudios1025@gmail.com
+            </a>
+        </p>
+        <p class="contact-row">
+            <img src="Images/Socials/discord.png" alt="Discord icon" class="contact-icon">
+
+            <strong>Discord:</strong>
+            <a href="https://discord.gg/43Rzezg32" target="_blank" class="contact-link">
+                Join our community
+            </a>
+        </p>
+        <p class="contact-row">
+            <span class="contact-icon-wrap">
+                <img src="Images/Socials/x-logo.png" alt="X icon" class="contact-icon">
+            </span>
+
+            <strong>X:</strong>
+            <a href="https://x.com/IsekaiStudiosTA" target="_blank" class="contact-link">
+                @IsekaiStudiosTA
+            </a>
         <p style="margin-top: 2rem;">Whether you're a fellow developer, a potential collaborator, or just a fan who
             wants to say hi—we'd love to hear from you! Every great adventure starts with a conversation.</p>
     </div>
@@ -97,8 +143,8 @@
             <img src="Images/DGV/vince.png" alt="Don't Get Vinced">
             <h3>🌭 Don’t Get Vinced</h3>
             <p>
-                Rockstar City, Chicago, 1999. After crime boss Vince “The Viper” Malone steals a cloning virus and 
-                unleashes an army of himself, Doug — a chili dog-loving brawler — must fight back, stop the invasion, 
+                Rockstar City, Chicago, 1999. After crime boss Vince “The Viper” Malone steals a cloning virus and
+                unleashes an army of himself, Doug — a chili dog-loving brawler — must fight back, stop the invasion,
                 and save the city.
             </p>
             <span class="game-badge">⚡ IN DEVELOPMENT</span>
@@ -140,32 +186,26 @@
         </p>
 
         <div class="bubble-game">
-    <div class="game-header">
-        <span>🫧 Bubble Pop</span>
-        <span>Score: <span id="score">0</span></span>
-    </div>
+            <div class="game-header">
+                <span>🫧 Bubble Pop</span>
+                <span>Score: <span id="score">0</span></span>
+            </div>
 
-    <div id="game-area">
-        <button id="start-button">Start Game</button>
+            <div id="game-area">
+                <button id="start-button">Start Game</button>
 
-        <div id="score-entry" class="score-entry hidden">
-            <h3>New Score: <span id="final-score">0</span></h3>
-            <p>Enter your initials</p>
+                <div id="score-entry" class="score-entry hidden">
+                    <h3>New Score: <span id="final-score">0</span></h3>
+                    <p>Enter your initials</p>
 
-            <input
-                id="initials-input"
-                type="text"
-                maxlength="3"
-                placeholder="AAA"
-                autocomplete="off"
-            >
+                    <input id="initials-input" type="text" maxlength="3" placeholder="AAA" autocomplete="off">
 
-            <button id="save-score-button">Save Score</button>
-        </div>
-    </div>
+                    <button id="save-score-button">Save Score</button>
+                </div>
+            </div>
 
-    <div class="leaderboard">
-        <h3>🏆 High Scores</h3>
-        <ol id="leaderboard-list"></ol>
-    </div>
-</div>
+            <div class="leaderboard">
+                <h3>🏆 High Scores</h3>
+                <ol id="leaderboard-list"></ol>
+            </div>
+        </div>-->>
