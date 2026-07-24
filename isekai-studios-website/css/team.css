@@ -1,0 +1,62 @@
+/* ---------- Team Grid ---------- */
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+
+    margin-top: 1.5rem;
+}
+
+
+/* ---------- Team Member Card ---------- */
+
+.team-member {
+    padding: 1.5rem;
+
+    background: rgba(30, 30, 60, 0.7);
+    border: 2px solid rgba(139, 92, 246, 0.4);
+    border-radius: 15px;
+
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(255, 165, 0, 0.8);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+}
+
+
+/* ---------- Member Name ---------- */
+
+.team-member h4 {
+    margin-bottom: 0.5rem;
+
+    color: #a78bfa;
+    font-size: 1.3rem;
+}
+
+
+/* ---------- Member Link ---------- */
+
+.team-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.team-link:hover {
+    color: #ff8fd8;
+    text-shadow: 0 0 10px #ff8fd8;
+}
+
+
+/* ---------- Member Role ---------- */
+
+.team-member p {
+    color: #ec4899;
+    font-size: 1rem;
+    font-weight: 600;
+}

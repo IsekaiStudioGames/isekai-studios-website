@@ -1,0 +1,235 @@
+/* ==================================================
+   TABLET
+   Screens up to 1200px wide.
+   ================================================== */
+
+@media (max-width: 1200px) {
+
+    /* ---------- Journey Path ---------- */
+
+    .journey-path {
+        align-items: center;
+        gap: 1rem;
+    }
+
+
+    /* ---------- Portals ---------- */
+
+    .portal {
+        width: 140px;
+        height: 220px;
+    }
+
+    .portal-label {
+        font-size: 16px;
+    }
+}
+
+
+/* ==================================================
+   MOBILE
+   Screens up to 768px wide.
+   ================================================== */
+
+@media (max-width: 768px) {
+
+    /* ---------- Document ---------- */
+
+    body {
+        overflow-y: auto;
+    }
+
+
+    /* ---------- Logo ---------- */
+
+    .logo-center h1 {
+        font-size: 2rem;
+    }
+
+    .logo-center p {
+        font-size: 1rem;
+    }
+
+
+    /* ---------- Journey Layout ---------- */
+
+    .journey-container {
+        min-height: auto;
+        padding: 2rem 1rem;
+    }
+
+    .journey-path {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+
+        padding: 4rem 0;
+    }
+
+
+    /* ---------- Vertical Path Line ---------- */
+
+    .journey-path::before {
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        right: auto;
+
+        width: 4px;
+        height: 100%;
+
+        background: linear-gradient(
+            180deg,
+            #3b82f6 0%,
+            #ffa500 20%,
+            #10b981 40%,
+            #ec4899 60%,
+            #8b5cf6 80%,
+            #f59e0b 100%
+        );
+
+        transform: translateX(-50%);
+    }
+
+
+    /* ---------- Portals ---------- */
+
+    .portal {
+        width: 200px;
+        height: 300px;
+    }
+
+    .portal-inner::after {
+        width: 160px;
+        height: 160px;
+    }
+
+    .portal-label {
+        font-size: 24px;
+    }
+
+
+    /* ---------- Information Panel ---------- */
+
+    .info-panel {
+        position: relative;
+        bottom: auto;
+        left: auto;
+
+        max-width: calc(100% - 2rem);
+        margin: 2rem auto;
+    }
+
+
+    /* ---------- Modals ---------- */
+
+    .modal-content {
+        width: calc(100% - 2rem);
+        margin: 1rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .modal h2 {
+        font-size: 2rem;
+    }
+
+
+    /* ---------- Team Grid ---------- */
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* ---------- Traveler ---------- */
+
+    .traveler {
+        top: 0;
+        bottom: auto;
+        left: 50%;
+
+        margin-left: -20px;
+
+        animation: walkVertical 20s linear infinite;
+    }
+}
+
+
+/* ==================================================
+   SMALL MOBILE
+   Screens up to 480px wide.
+   ================================================== */
+
+@media (max-width: 480px) {
+
+    /* ---------- Logo ---------- */
+
+    .logo-center h1 {
+        font-size: 1.5rem;
+    }
+
+
+    /* ---------- Portals ---------- */
+
+    .portal {
+        width: 140px;
+        height: 200px;
+    }
+
+    .portal-inner::after {
+        width: 100px;
+        height: 100px;
+    }
+
+    .portal-label {
+        font-size: 1rem;
+    }
+
+
+    /* ---------- Portal Expansion Effect ---------- */
+
+    .portal.expanding {
+        z-index: 2000;
+
+        opacity: 0;
+        transform: scale(20);
+    }
+
+
+    /* ---------- Traveler ---------- */
+
+    .traveler {
+        font-size: 2.5rem;
+    }
+
+    .traveler::before,
+    .traveler::after {
+        transform: rotate(90deg);
+        transform-origin: center;
+    }
+
+    .traveler::before {
+        top: 10px;
+        left: -5px;
+    }
+
+    .traveler::after {
+        top: -10px;
+        left: 2.5px;
+    }
+}
+
+
+/* ==================================================
+   RESPONSIVE ANIMATIONS
+   ================================================== */
+
+@keyframes walkVertical {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: calc(100% - 80px);
+    }
+}

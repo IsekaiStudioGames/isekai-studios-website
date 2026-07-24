@@ -1,0 +1,47 @@
+/* ---------- Contact Rows ---------- */
+
+.contact-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+/* ---------- Icon Wrapper ---------- */
+
+.contact-icon-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 26px;
+    height: 26px;
+}
+
+
+/* ---------- Contact Icons ---------- */
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+
+    object-fit: contain;
+    filter:
+        brightness(0)
+        invert(1)
+        drop-shadow(0 0 6px rgba(236, 72, 153, 0.7));
+}
+
+
+/* ---------- Contact Links ---------- */
+
+.contact-link {
+    color: #c4b5fd;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    color: #ffa500;
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
+}

@@ -1,0 +1,65 @@
+/* ---------- Reset ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ---------- Fonts ---------- */
+
+@font-face {
+    font-family: "Minecraft";
+    src: url("../fonts/MinecraftRegular-Bmg3.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Minecraft";
+    src: url("../fonts/MinecraftBold-nMK1.otf") format("opentype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Pixel Digivolve";
+    src: url("../fonts/PixelDigivolve-mOm9.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* ---------- Document ---------- */
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    background: linear-gradient(
+        135deg,
+        #000000 0%,
+        #0a0e27 100%
+    );
+
+    color: #ffffff;
+    font-family: "Minecraft", sans-serif;
+}
+
+
+/* ---------- Interactive Elements ---------- */
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+
+/* ---------- Utilities ---------- */
+
+.hidden {
+    display: none !important;
+}
