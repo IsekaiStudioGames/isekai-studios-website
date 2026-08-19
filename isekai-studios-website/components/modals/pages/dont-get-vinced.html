@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don't Get Vinced - Isekai Studios</title>
+    <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+    <link rel="stylesheet" href="../../../css/pages/dont-get-vinced.css">
+</head>
+
+<body>
+    <div class="stars-bg" id="stars"></div>
+
+    <nav>
+        <ul>
+            <div class="nav-left">
+                <li class="logo">⚔️ ISEKAI STUDIOS 🔮</li>
+                <li><a href="../../index.html" class="back-button">← Back to Guild Hall</a></li>
+            </div>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="game-icon-container">
+            <img src="../../../Images/DGV/vince4.png" alt="Don't Get Vinced">
+        </div>
+        <h1>Don’t Get Vinced</h1>
+        <p class="tagline">"One Vince was already too many."</p>
+        <div class="game-status">
+            <span class="status-badge">⚡ IN DEVELOPMENT </span>
+            <span class="status-badge">🎮 TEAM PROJECT </span>
+            <span class="status-badge">🎨 HAND-CRAFTED </span>
+            <span class="status-badge">🎮 GAME JAM </span>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2 class="section-title">📖 About the Quest</h2>
+        <p class="description">
+            Don’t Get Vinced is a fast-paced team project set in Rockstar City, Chicago, 1999.
+            After crime boss Vince “The Viper” Malone steals a cloning virus and unleashes an army of himself.
+            Doug, a chili dog-loving brawler, must fight through the chaos and save the city.
+        </p>
+
+        <div class="dev-team">
+            <h3>⚔️ Development Party</h3>
+            <p class="description">Created by the Don’t Get Vinced development team:</p>
+            <div class="dev-list">
+                <div class="dev-name">📋 GeoBoshi - Producer</div>
+                <div class="dev-name">🎮 Peacebaby313 (Jesse) - Lead Programmer</div>
+                <div class="dev-name">🤖 Devbxnny - AI Systems Programmer</div>
+                <div class="dev-name">🎨 Chaos - UI/UX Programmer</div>
+                <div class="dev-name">🛠️ Drake Curry (Jäger) - Programmer</div>
+                <div class="dev-name">🖌️ The Pickle-Man - Artist</div>
+                <div class="dev-name">🪳 Roach Daniel - Artist</div>
+                <div class="dev-name">🎧 Agentghostjr - Audio</div>
+            </div>
+        </div>
+
+        <div class="screenshot-placeholder">
+            <img src="../../../Images/DGV/vince4.png" alt="Don't Get Vinced gameplay screenshot">
+        </div>
+
+        <h2 class="section-title">🥊 Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-icon">🤖</span>
+                <h3>Enemy AI Systems</h3>
+                <p>AI behavior helps bring Vince’s clone army to life through enemy logic and player-focused encounters.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🥊</span>
+                <h3>Beat 'Em Up Combat</h3>
+                <p>Fight through waves of danger in a city overrun by clones, chaos, and criminal ambition.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🧬</span>
+                <h3>Clone Invasion</h3>
+                <p>Vince’s stolen virus creates an army of doppelgangers, turning the city into one big bad idea.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🌆</span>
+                <h3>Rockstar City</h3>
+                <p>Explore a 1999 Chicago-inspired setting packed with wannabe stars, criminals, and street-level chaos.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🌭</span>
+                <h3>Doug the Brawler</h3>
+                <p>Play as Doug, a chili dog-loving fighter ready to punch through Vince’s plans one clone at a time.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🎮</span>
+                <h3>Team-Built Gameplay</h3>
+                <p>A collaborative project focused on gameplay systems, combat flow, debugging, and iteration.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">📜 The Story</h2>
+        <p class="description">
+            Rockstar City, Chicago, 1999. It is a playground for wannabe stars and criminals trying to make it big.
+            When crime boss Vince “The Viper” Malone steals a top-secret cloning virus, he creates an army of himself
+            and sets his sights on taking over the city.
+        </p>
+        <p class="description">
+            Now it is up to Doug to fight back, stop the invasion, and teach Vince a lesson he will never forget.
+        </p>
+    </section>
+
+    <section class="cta-section">
+        <h2 class="section-title">🎮 Play the Game</h2>
+        <p class="description">Check out Don’t Get Vinced</p>
+        <a class="cta-button" href="https://isekai-studios.itch.io/dont-get-vinced" target="_blank" rel="noopener noreferrer">
+            Play on itch.io
+        </a>
+        <a class="cta-button" href="../../../index.html">
+            Return to Guild Hall
+        </a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Isekai Studios. All rights reserved. | <a href="../../../index.html">Return to Guild Hall</a></p>
+    </footer>
+
+    <script>
+        // Star trail cursor
+        let lastStarTime = 0;
+        const starInterval = 30;
+
+        document.addEventListener('mousemove', (e) => {
+            const currentTime = Date.now();
+            
+            if (currentTime - lastStarTime > starInterval) {
+                const star = document.createElement('div');
+                star.className = 'cursor-star';
+                star.style.left = e.clientX + 'px';
+                star.style.top = e.clientY + 'px';
+                document.body.appendChild(star);
+                
+                lastStarTime = currentTime;
+                
+                setTimeout(() => {
+                    star.remove();
+                }, 800);
+            }
+        });
+
+        // Generate background stars
+        const starsContainer = document.getElementById('stars');
+
+        for (let i = 0; i < 300; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.width = Math.random() * 3 + 'px';
+            star.style.height = star.style.width;
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>May All Your Bacon Burn - Isekai Studios</title>
+    <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+    <link rel="stylesheet" href="../css/pages/may-all-your-bacon-burn.css">
+</head>
+<body>
+    <div class="stars-bg" id="stars"></div>
+
+    <nav>
+        <ul>
+            <div class="nav-left">
+                <li class="logo">⚔️ ISEKAI STUDIOS 🔮</li>
+                <li><a href="../index.html" class="back-button">← Back to Guild Hall</a></li>
+            </div>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="game-icon-container">
+            <img src="Images/MAYBB.png" alt="May All Your Bacon Burn">
+        </div>
+        <h1>May All Your Bacon Burn</h1>
+        <p class="tagline">"Here's another curse for you..."</p>
+        <div class="game-status">
+            <span class="status-badge">⚡ IN DEVELOPMENT</span>
+            <span class="status-badge">🎨 HAND-CRAFTED</span>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2 class="section-title">📖 About the Quest</h2>
+        <p class="description">
+            May All Your Bacon Burn is the debut title from Isekai Studios, a unique adventure that blends magic, mystery, and culinary chaos. Step into a world where cooking isn't just a skill—it's survival, and every flame tells a story.
+        </p>
+        <p class="description">
+            Navigate through enchanted kitchens, face mischievous fire spirits, and uncover the secrets behind an ancient curse. With innovative gameplay mechanics and a captivating narrative, this game puts a fresh spin on the adventure genre.
+        </p>
+
+       <div class="dev-team">
+            <h3>⚔️ Development Party</h3>
+            <p class="description">Crafted with passion by the talented heroes at Isekai Studios:</p>
+            <div class="dev-list">
+                <div class="dev-name">🎮 Peacebaby313 (Jesse)</div>
+                <div class="dev-name">⚡ Chaos</div>
+                <div class="dev-name">🤖 RicoBOT</div>
+                <div class="dev-name">🐻 ArcaneGummyBear</div>
+                <div class="dev-name">🌙 Eclipse</div>
+                <div class="dev-name">💼 Erica Henderson</div>
+                <div class="dev-name">👥 Geojuan45</div>
+                <div class="dev-name">🎯 Koolra</div>
+            </div>
+        </div>
+
+        <div class="screenshot-placeholder">
+            🎮 Game Screenshot
+        </div>
+
+        <h2 class="section-title">🔥 Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-icon">🍳</span>
+                <h3>Culinary Combat</h3>
+                <p>Master the art of magical cooking with unique mechanics that blend puzzle-solving with action.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🔥</span>
+                <h3>Fire Spirit Allies</h3>
+                <p>Befriend mischievous fire spirits, each with their own personality and abilities to help on your journey.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🏰</span>
+                <h3>Enchanted Locations</h3>
+                <p>Explore mystical kitchens, haunted pantries, and magical dining halls filled with secrets.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">📖</span>
+                <h3>Deep Lore</h3>
+                <p>Uncover the mysterious origins of the bacon-burning curse through hidden clues and encounters.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🎨</span>
+                <h3>Charming Art Style</h3>
+                <p>Experience a vibrant, hand-crafted world that brings the magical culinary adventure to life.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🎵</span>
+                <h3>Original Soundtrack</h3>
+                <p>Immerse yourself in an enchanting musical score that captures the whimsy and wonder of the journey.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">📜 The Story</h2>
+        <p class="description">
+            In a realm where cooking and magic are one, a terrible curse has been unleashed: all bacon shall burn. What begins as a culinary inconvenience quickly spirals into an adventure across enchanted kitchens and mystical realms.
+        </p>
+        <p class="description">
+            As you delve deeper into the mystery, you'll discover that this curse is just the beginning. Ancient powers stir, long-forgotten recipes hold the key to salvation, and someone—or something—is manipulating events from the shadows. Can you lift the curse before all hope turns to ash?
+        </p>
+    </section>
+
+    <section class="cta-section">
+        <h2 class="section-title">🎮 Join the Adventure</h2>
+        <p class="description">May All Your Bacon Burn is currently in development. Stay tuned for updates!</p>
+        <button class="cta-button">Follow Development</button>
+        <button class="cta-button">Join Community</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Isekai Studios. All rights reserved. | <a href="index.html">Return to Guild Hall</a></p>
+    </footer>
+
+    <script>
+        // Star trail cursor
+        let lastStarTime = 0;
+        const starInterval = 30;
+
+        document.addEventListener('mousemove', (e) => {
+            const currentTime = Date.now();
+            
+            if (currentTime - lastStarTime > starInterval) {
+                const star = document.createElement('div');
+                star.className = 'cursor-star';
+                star.style.left = e.clientX + 'px';
+                star.style.top = e.clientY + 'px';
+                document.body.appendChild(star);
+                
+                lastStarTime = currentTime;
+                
+                setTimeout(() => {
+                    star.remove();
+                }, 800);
+            }
+        });
+
+        // Generate background stars
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 300; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.width = Math.random() * 3 + 'px';
+            star.style.height = star.style.width;
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>
